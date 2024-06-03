@@ -15,67 +15,62 @@
             <a href="./login.html" class="btn-entrar text-end">ENTRAR</a>
             <a href="./cadastrar.html" class="btn-Cadastrar text-end" id="ative">CADASTRAR</a>
         </aside>
-        <section class="form">
+        <section class="form" id="registrationForm">
             <div class="text-center">
-                <img src="assets/img/Component 5.png" >
+                <img src="assets/img/Component 5.png">
                 <h2>CADASTRAR</h2>
             </div>
-
-            <form action="" method="get">
-
+            <div>
                 <div class="input-control">
-                    <i class="fa-solid fa-user me-2 mb-3"></i> <input type="text" class="mb-3" placeholder="Nome completo" name="name" id="name" required minlength="20">
+                    <i class="fa-solid fa-user me-2 mb-3"></i> 
+                    <input type="text" class="mb-3" placeholder="Nome completo" name="name" id="name" required minlength="20">
                 </div>
-
                 <div class="input-control">
-                    <i class="fa-solid fa-envelope me-2 mb-3"></i> <input type="email" class="mb-3" placeholder="Email ou número de telefone" name="email" id="email" required minlength="20">
+                    <i class="fa-solid fa-envelope me-2 mb-3"></i> 
+                    <input type="email" class="mb-3" placeholder="Email ou número de telefone" name="email" id="email" required minlength="20">
                 </div>
                 <div class="input-radio">
-                    <div>
-                        
-                    </div>
+                    <div></div>
                     <div class="genero">
                         <p>Gênero</p> 
                         <label for="F">Femenino</label>
                         <div class="input_generos">
-                            <input type="radio" name="genero" id="M" checked>
+                            <input type="radio" name="genero" id="F" value="F">
                         </div>
-                        
                         <label for="M">Masculino</label>
                         <div class="input_generos">
-                            <input type="radio" name="genero" id="F" checked>
+                            <input type="radio" name="genero" id="M" value="M" checked>
                         </div>
-                        
                     </div>
                 </div>
-
                 <div class="input-control">
-                    <i class="fa-solid fa-location-dot me-2 mb-3"></i> <input type="email" class="mb-3" placeholder="Morada" name="house" id="house" required >
+                    <i class="fa-solid fa-location-dot me-2 mb-3"></i> 
+                    <input type="text" class="mb-3" placeholder="Morada" name="house" id="house" required>
                 </div>
-
                 <div class="input-control">
-                    <input type="date" class="mb-3" placeholder="Data de Nascimento" name="date" id="date" required >
-                </div>
-
-                <div class="input-control my-5">
-                    <i class="fa-solid fa-lock me-2 mb-3"></i>  <input type="password" class="mb-3" placeholder="Palavra-passe" name="password" id="password" required minlength="20">
+                    <input type="date" class="mb-3" placeholder="Data de Nascimento" name="date" id="date" required>
                 </div>
                 <div class="input-control my-5">
-                    <i class="fa-solid fa-lock me-2 mb-3"></i>  <input type="password" class="mb-3" placeholder="Confirme Palavra-passe" name="confirmPassword" id="confirmPassword" required minlength="20">
+                    <i class="fa-solid fa-lock me-2 mb-3"></i>  
+                    <input type="password" class="mb-3" placeholder="Palavra-passe" name="password" id="password" required minlength="20">
                 </div>
-
+                <div class="input-control my-5">
+                    <i class="fa-solid fa-lock me-2 mb-3"></i>  
+                    <input type="password" class="mb-3" placeholder="Confirme Palavra-passe" name="confirmPassword" id="confirmPassword" required minlength="20">
+                </div>
                 <a href="login.html">Já tem uma conta?</a>
-
                 <div class="btn-control my-3 text-end mb-5">
                     <a href="../CED CEM/index.html" class="btn btn-secondary">Voltar</a>
-                    <input type="submit" class="btn btn-primary" value="Entrar">
+                    <input  id="cadastrar"  class="btn btn-primary" value="Cadastrar">
                 </div>
-            </form>
-
+            </div>
         </section>
+        
     </section>
 
 </body>
+<script src="../api/cadastrar.js"></script>
 <script src="font-icone/js/all.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+
 </html>

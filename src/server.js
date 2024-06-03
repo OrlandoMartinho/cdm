@@ -39,6 +39,21 @@ const HOST =process.env.HOST||port.HOST
 
 app.use(express.static(path.join(__dirname,'..', 'public'))); 
 // Rota para retornar a página HTML
+app.post('/', (req, res) => {
+  const {accessToken}=req.body
+    token.verificarTokenUsuario(accessToken).then(resultado => {
+      if(resultado){
+        res.status(201).json({mensagem:true})
+      }else{
+        res.status(201).json({mensagem:false})
+      }
+     })
+    .catch(erro => {
+      console.error(erro);
+       res.status(500).json({mensagem:"Erro interno do servidor"})
+     });
+
+});
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'..', 'public', 'index.html'));
 });
