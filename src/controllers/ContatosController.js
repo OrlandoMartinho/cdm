@@ -13,7 +13,7 @@ const ContactosController = {
         }
         const insertContacto = 'INSERT INTO contatos ( email,mensagem,nome) VALUES (?,?,?)';
         await dbPromise.query(insertContacto, [email,mensagem,nome]) 
-        const notificacao = "Novo contacto recebido do email "+email;
+        const notificacao = "Novo contacto recebido do email "+email; 
         notify.addNotificacao(notificacao,0);   
         return res.status(200).json({ mensagem: 'Contacto adicionado com sucesso' });
       

@@ -4,14 +4,15 @@
     <link rel="shortcut icon" type="x-icon" href="../assets/img/Logo2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Falecido</title>
+    <title>Meu Perfil</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="font-icone/css/all.min.css">
+    <script src="api/autenticacaoUser.js"></script>
 </head>
 <body>
     <header>
-        <a href="../CED CEM/home.html"><img src="../CED CEM/assets/img/logo.png" alt=""></a>
+        <a href="../CED CEM/home.html"><img src="assets/img/logo.png" alt=""></a>
         <nav>
             <a href="../CED CEM/home.html">Início</a>
             <a href="../CED CEM/home.html">Quem somos</a>
@@ -26,142 +27,125 @@
     </header>
 
     <!-- Modal menu -->
-  <div id="unique-modal" class="unique-modal">
-    <div class="unique-modal-content">
-      <span class="unique-close">&times;</span>
-      <p>Menu</p>
-      <div class="unique-conteudo-modal">
-        <a href="#">Meus Entes Queridos</a>
-        </div>
-        <div class="unique-conteudo-modal">
-            <a href="#">Registar Funeral</a>
-        </div>
-        <div class="unique-conteudo-modal">
-            <a href="#">Agendar Funeral</a>
-        </div>
-        <div class="unique-conteudo-modal">
-            <a href="home.html">Sair</a>
+    <div id="unique-modal" class="unique-modal">
+        <div class="unique-modal-content">
+            <span class="unique-close">&times;</span>
+            <p>Menu</p>
+            <div class="unique-conteudo-modal">
+                <a href="#">Meus Entes Queridos</a>
+            </div>
+            <div class="unique-conteudo-modal">
+                <a href="#">Registar Funeral</a>
+            </div>
+            <div class="unique-conteudo-modal">
+                <a href="#">Agendar Funeral</a>
+            </div>
+            <div class="unique-conteudo-modal">
+                <a href="home.html">Sair</a>
+            </div>
         </div>
     </div>
-  </div>
 
     <!-- Modal notificacoes -->
-  <div id="notificacoes-modal" class="notificacoes-modal">
-    <div class="notificacoes-modal-content">
-      <span class="notificacoes-close">&times;</span>
-      <p>Notificações</p>
-      <div class="notificacoes-icones">
-        <i class="fa fa-refresh" aria-hidden="true"></i>
-      </div>
-      <div class="notificacoes-icones">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-      </div>
-      <div class="notificacoes-conteudo-modal">
-        <p>O funeral de Alberto Wia realizado no 
-          dia 16-05-2024, pela 10:00 na quadra 12,
-          lote 2 Precisa ser legalizado, no prazo de 5 anos.</p>
-      </div>
-      <div class="notificacoes-hora">
-        <span>Maio 13, 2024 08H40 Segunda-feira</span>
-      </div>
-      <div class="notificacoes-conteudo-modal">
-        <p>O funeral de Alberto Wia realizado no 
-          dia 16-05-2024, pela 10:00 na quadra 12,
-          lote 2 Precisa ser legalizado, no prazo de 5 anos.</p>
-      </div>
-      <div class="notificacoes-hora">
-        <span>Maio 13, 2024 08H40 Segunda-feira</span>
-      </div>
+    <div id="notificacoes-modal" class="notificacoes-modal">
+        <div class="notificacoes-modal-content">
+            <span class="notificacoes-close">&times;</span>
+            <p>Notificações</p>
+            <div class="notificacoes-icones">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+            </div>
+            <div class="notificacoes-icones">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+            <div id="notificacoes-conteudo-modal" class="notificacoes-conteudo-modal">
+                <!-- Notificações serão adicionadas aqui -->
+            </div>
+        </div>
     </div>
-  </div>
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="form-container mt-5">
-                    <div class="form-title ">
+                    <div class="form-title">
                         <h2>Meu Perfil</h2>
                         <div class="editar" id="openModal">
                             <a href="#">Editar</a> 
                         </div>
                         <div id="modal" class="modal">
                             <div class="modal-content">
-                              <span class="close">&times;</span>
+                                <span class="close">&times;</span>
                                 <h3>Editar Perfil</h3>
-                                <form>
+                                <div id="editForm">
                                     <div class="form-group">
                                         <label for="nome">Nome</label>
                                         <input type="text" class="form-control" id="nome">
                                     </div>
                                     <div class="form-group">
-                                        <label for="datadenascimento">Data de nascimento</label>
-                                        <input type="date" class="form-control" id="dataFalecimento">
+                                        <label for="dataDeNascimento">Data de nascimento</label>
+                                        <input type="date" class="form-control" id="dataDeNascimento">
                                     </div>
                                     <div class="form-group">
-                                        <label for="contatoResponsavel">E-mail</label>
+                                        <label for="email">E-mail</label>
                                         <input type="email" class="form-control" id="email">
                                     </div>
                                     <div class="form-group">
                                         <label for="telemovel">Telemóvel</label>
                                         <input type="text" class="form-control" id="telemovel">
                                     </div>
-
                                     <div class="form-group">
-                                        <label for="senhaantiga">Senha antiga</label>
-                                        <input type="password" class="form-control" id="senhaantiga">
+                                        <label for="senhaAntiga">Senha antiga</label>
+                                        <input type="password" class="form-control" id="senhaAntiga">
                                     </div>
-
                                     <div class="form-group">
-                                        <label for="senhanova">Senha nova</label>
-                                        <input type="password" class="form-control" id="senhanova">
+                                        <label for="senhaNova">Senha nova</label>
+                                        <input type="password" class="form-control" id="senhaNova">
                                     </div>
-                                    <button type="submit">Salvar</button>
-                                </form>
+                                    <input type="submit" value="Salvar">
+                                </div>
                             </div>
-                          </div>
+                        </div>
                     </div>
-                    <form>
+                    <div>
                         <div class="form-group">
                             <label for="nome">Nome</label>
                         </div>
                         <div class="form-group">
-                            <label>Francisco Sabalo João Fracol</label>
+                            <label id="nomeAtual">Francisco Sabalo João Fracol</label>
                         </div>
                         <div class="form-group">
-                            <label for="datadenasimento">Data de nascimento</label>
+                            <label for="dataDeNascimento">Data de nascimento</label>
                         </div>
                         <div class="form-group">
-                            <label for="datadenasimento">12/12/2000</label>
+                            <label id="dataDeNascimentoAtual">12/12/2000</label>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                         </div>
                         <div class="form-group">
-                            <label for="email">joaojose@gmail.com</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="dataHoraOriginal">Telemóvel</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="dataHoraNova">920 000 000</label>
+                            <label id="emailAtual">joaojose@gmail.com</label>
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha</label>
                         </div>
                         <div class="form-group">
-                            <label for="senha">******************</label>
+                            <label id="senhaAtual">******************</label>
                         </div>
-                    </form>
+                      
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-<script src="js/menu.js"></script>
-<script src="js/editarperfil.js"></script>
-<script src="font-icone/js/all.min.js"></script>
-<script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="js/perfilnotificacoes.js"></script>
-<script src="js/menuperfil.js"></script>
+   
+
+    <script src="js/menu.js"></script>
+    <script src="js/editarperfil.js"></script>
+    <script src="font-icone/js/all.min.js"></script>
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/perfilnotificacoes.js"></script>
+    <script src="js/menuperfil.js"></script>
+    <script src="api/perfil.js"></script>
 </body>
 </html>

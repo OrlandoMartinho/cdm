@@ -19,7 +19,7 @@ const notificacoesController = {
         }
         const id_usuario = token.usuarioId(accessToken)
         const selectQuery2 = "SELECT * FROM notificacoes where id_usuario = ?";
-        const [notificacoesResult]=await dbPromise(selectQuery2,id_usuario)
+        const [notificacoesResult]=await dbPromise.query(selectQuery2,id_usuario)
         return res.status(200).json({notificacoes:notificacoesResult})
     },
     apagarTodasNotificacoesDoUsuario: async (req, res) => {

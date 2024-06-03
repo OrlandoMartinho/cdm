@@ -2,7 +2,7 @@ const db = require('../config/dbConfig');
 const token = require('../utils/token');
 const dbPromise = db.promise();
 const gerarCodigoDeVerificacao=require('../utils/gerarcodigoDeVerificacao')
-
+const notify=require('../controllers/NotificacoesController')
 const funeralController = {
     cadastrarFuneral: async (req, res) => {
         const {nome_completo,filiacao,causa_da_morte,data_de_falecimento,localizacao,data_de_sepultamento ,nacionalidade,accessToken} = req.body;
@@ -65,6 +65,8 @@ const funeralController = {
             }
             const deleteUsuarioQuery = 'DELETE FROM funerais WHERE id_funeral = ?';
             const deleteResults=await dbPromise.query(deleteUsuarioQuery, [id_funeral]) 
+            const [funerais]=await dbPromise.query('SELECT * FROM funerais where id_funeral = ?', [id_funeral])
+            notify.addNotificacao("O seu funeral foi cancelado ",funerais[0].id_usuario) 
             return  res.status(200).json({ mensagem: 'Funeral eliminado com sucesso' });
         } catch (err) {
            console.error('Erro ao eliminar usuário:', err);
@@ -79,7 +81,9 @@ const funeralController = {
             }
             const deleteUsuarioQuery = 'UPDATE funerais SET agendado =1 WHERE id_funeral = ?';
             const deleteResults=await dbPromise.query(deleteUsuarioQuery, [id_funeral]) 
-            return  res.status(200).json({ mensagem: 'Funeral eliminado com sucesso' });
+            const [funerais]=await dbPromise.query('SELECT * FROM funerais where id_funeral = ?', [id_funeral])
+            notify.addNotificacao("O seu funeral foi aprovado ",funerais[0].id_usuario) 
+            return  res.status(200).json({ mensagem: 'Funeral confirmado com sucesso' });
         } catch (err) {
            console.error('Erro ao eliminar usuário:', err);
            return res.status(500).json({ mensagem: 'Erro interno do servidor ao eliminar usuário' });
@@ -94,6 +98,7 @@ const funeralController = {
             const rupe = gerarCodigoDeVerificacao;
             const deleteUsuarioQuery = 'UPDATE funerais SET legalizado =1,rupe = ? WHERE id_funeral = ?';
             const deleteResults=await dbPromise.query(deleteUsuarioQuery, [rupe,id_funeral]) 
+            notify.addNotificacao("Novo pedido de legalizacão id_funeral:",id_funeral,0) 
             return  res.status(200).json({ mensagem: 'Pedido feito com sucesso',rupe_gerado:rupe});
         } catch (err) {
            console.error('Erro ao eliminar usuário:', err);
@@ -108,7 +113,9 @@ const funeralController = {
             }
             const deleteUsuarioQuery = 'UPDATE funerais SET legalizado =2 WHERE id_funeral = ?';
             const deleteResults=await dbPromise.query(deleteUsuarioQuery, [id_funeral]) 
-            return  res.status(200).json({ mensagem: 'Funeral eliminado com sucesso' });
+            const [funerais]=await dbPromise.query('SELECT * FROM funerais where id_funeral = ?', [id_funeral])
+            notify.addNotificacao("O seu funeral foi legalizado com sucesso ",funerais[0].id_usuario) 
+            return  res.status(200).json({ mensagem: 'Funeral legalizado  com sucesso' });
         } catch (err) {
            console.error('Erro ao eliminar usuário:', err);
            return res.status(500).json({ mensagem: 'Erro interno do servidor ao eliminar usuário' });
@@ -123,8 +130,28 @@ const funeralController = {
             }
 
             const rupe = gerarCodigoDeVerificacao;
-            const deleteUsuarioQuery = 'UPDATE funerais SET rupe = ?,data_de_sepultamento = ? WHERE id_funeral = ?';
+            const deleteUsuarioQuery = 'UPDATE funerais SET adiar = 0,rupe = ?,data_de_sepultamento = ? WHERE id_funeral = ?';
             const deleteResults=await dbPromise.query(deleteUsuarioQuery, [rupe,data_de_sepultamento,id_funeral]) 
+            const [funerais]=await dbPromise.query('SELECT * FROM funerais where id_funeral = ?', [id_funeral])
+            notify.addNotificacao("Novo pedido de adiamento de funeral ",0) 
+            return  res.status(200).json({mensagem:'Funeral adiado com sucesso',rupe_gerado:rupe});
+        } catch (err) {
+           console.error('Erro ao eliminar usuário:', err);
+           return res.status(500).json({ mensagem: 'Erro interno do servidor ao eliminar usuário' });
+        }
+    },
+    aprovarAdiarFuneral: async (req, res) => {
+        try {
+            const { accessToken,id_funeral ,data_de_sepultamento} = req.body;
+            if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=1){
+                return res.status(401).json({ Mensagem: "Campos incompletos" });
+            }
+
+            const rupe = gerarCodigoDeVerificacao;
+            const deleteUsuarioQuery = 'UPDATE funerais SET adiar = 1,rupe = ?,data_de_sepultamento = ? WHERE id_funeral = ?';
+            const deleteResults=await dbPromise.query(deleteUsuarioQuery, [rupe,data_de_sepultamento,id_funeral]) 
+            const [funerais]=await dbPromise.query('SELECT * FROM funerais where id_funeral = ?', [id_funeral])
+            notify.addNotificacao("O seu adiamento de funeral foi aprovado",funerais[0].id_usuario) 
             return  res.status(200).json({mensagem:'Funeral adiado com sucesso',rupe_gerado:rupe});
         } catch (err) {
            console.error('Erro ao eliminar usuário:', err);

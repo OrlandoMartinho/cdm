@@ -18,4 +18,7 @@ router.post('/confirmar',funeraisController.confirmarFuneral)
 
 router.post('/aprovar_legalizacao',funeraisController.aprovarlegalizarFuneral)
 
+router.post('/aprovar_adiamento',funeraisController.aprovarAdiarFuneral)
+
+
 module.exports = router;

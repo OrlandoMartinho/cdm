@@ -130,6 +130,7 @@ connection.connect(async (err) => {
           localizacao VARCHAR(255) DEFAULT null,
           data_de_sepultamento DATE DEFAULT null,
           legalizado INT DEFAULT 0,
+          adiar INT DEFAULT NULL,
           agendado  INT DEFAULT 0,
           nacionalidade VARCHAR(255) DEFAULT null,
           numero_do_acento_do_obito VARCHAR(45) DEFAULT null,

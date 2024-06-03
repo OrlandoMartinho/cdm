@@ -29,13 +29,19 @@ const UsersController = {
         try {    
             const senhaEncriptada = await bcrypt.hashSync(senha, salt);
             // Inserir o novo usuário na tabela `usuarios`
-            const createQuery = "INSERT INTO usuarios (tipo,nome, senha, genero, email, data_de_nascimento,morada) VALUES (?, ?, ?, ?, ?,?)";
+            const createQuery = "INSERT INTO usuarios (tipo,nome, senha, genero, email, data_de_nascimento,morada) VALUES (?,?, ?, ?, ?,?,?)";
                         
             const [insetUser]=await  dbPromise.query(createQuery,[2,nome, senhaEncriptada, genero,email,data_de_nascimento,morada])
                     
+            const [user] = await dbPromise.query(selectQuery,[email]);
+            const usuario=user[0] 
+            const accessToken = jwt.sign({usuarioEmail:email, id_usuario: usuario.id_usuario,usuarioTipo:usuario.tipo,senha:usuario.senha}, secretKey.secretKey);
+            const updateQuery = 'UPDATE usuarios SET token = ? WHERE id_usuario = ?';
+            const params = [accessToken,usuario.id_usuario];
+            await dbPromise.query(updateQuery, params)    
             const notificacao = "O "+email+" Cadastrou-se na CDM";
-            notify.addNotificacao(notificacao,0);                         
-            return res.status(201).json({ Mensagem: "Usuário cadastrado com sucesso",id_usuario:insetUser.insertId});
+            notify.addNotificacao(notificacao,0);                     
+            return res.status(201).json({ Mensagem: "Usuário cadastrado com sucesso",accessToken:accessToken,usuarioTipo:2});
               
         } catch (err) {
             console.error({ Erro: err });
@@ -154,7 +160,7 @@ const UsersController = {
             return res.status(401).json({ mensagem: 'Token inválido' });
         }
         const selectQuery = 'SELECT * FROM usuarios WHERE token = ?';
-        const usuario =await dbPromise.query(selectQuery, [accessToken]) 
+        const [usuario] =await dbPromise.query(selectQuery, [accessToken]) 
         return  res.status(200).json({ usuario:usuario[0] });   
     }
 }

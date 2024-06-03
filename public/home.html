@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="font-icone/css/all.min.css">
+    <script src="api/autenticacaoUser.js"></script>
+    <script src="api/contatos.js"></script>
 </head>
 
 <body>
     <header>
-        <a href="../CED CEM/home.html"><img src="../CED CEM/assets/img/logo.png" alt=""></a>
+        <a href="../CED CEM/home.html"><img src="assets/img/logo.png" alt=""></a>
         <nav>
             <a href="../CED CEM/home.html">Início</a>
             <a href="#quem-somos">Quem somos</a>
@@ -176,9 +178,9 @@
                 </ul>
             </div>
             <div class="rigth">
-                <form action="">
+                <div>
                     <div class="input-box">
-                        <input type="text" required>
+                        <input id="nome" type="text" required>
                         <label> Seu Nome</label>
                     </div>
 
@@ -188,12 +190,12 @@
                     </div>
 
                     <div class="input-box">
-                        <input type="text" required>
+                        <input type="text" id="mensagem" required>
                         <label>Sua Mensagem</label>
                     </div>
 
-                    <button type="submit">Enviar Mensagem</button>
-                </form>
+                    <button type="submit" id="enviar">Enviar Mensagem</button>
+                  </div>
             </div>
 
         </div>
@@ -219,5 +221,6 @@
     <script src="js/entqmenu.js"></script>
     <script src="js/homenotificacoes.js"></script>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

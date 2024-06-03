@@ -6,7 +6,7 @@ const db = require('./config/dbConfig');
 const jwt = require('jsonwebtoken');
 const secretKey=require('./private/secretKey.json');
 const path=require('path')
- 
+const token = require('./utils/token'); 
 
 
 const app = express();
@@ -31,7 +31,7 @@ app.use('/usuarios', usersRoutes);
 app.use('/notificacoes', notificacoesRoutes);
 app.use('/funcionarios', funcionariosRoutes);
 app.use('/sepulturas',sepulturaRoutes)
-app.use('/contactos',contatosRoutes)
+app.use('/contatos',contatosRoutes)
 app.use('/funerais',funeralRoutes)
 // Iniciar o servidor 
 const PORT = process.env.PORT||port.PORT;
@@ -43,7 +43,7 @@ app.post('/', (req, res) => {
   const {accessToken}=req.body
     token.verificarTokenUsuario(accessToken).then(resultado => {
       if(resultado){
-        res.status(201).json({mensagem:true})
+        res.status(201).json({mensagem:true,usuarioTipo:token.usuarioTipo(accessToken)})
       }else{
         res.status(201).json({mensagem:false})
       }
