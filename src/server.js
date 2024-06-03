@@ -20,7 +20,7 @@ app.use(cors());
 // Importar as rotas
 const usersRoutes = require('./routes/UserRoutes');
 const notificacoesRoutes = require('./routes/NotificacoesRoutes');
-const conversasRoutes = require('./routes/FuncionariosRoutes');
+const funcionariosRoutes = require('./routes/FuncionariosRoutes');
 const consultasRoutes=require('./routes/ConsultasRoutes')
 const contatosRoutes=require('./routes/contatosRoutes')
 
@@ -28,7 +28,7 @@ const contatosRoutes=require('./routes/contatosRoutes')
 // Adicionar rotas
 app.use('/usuarios', usersRoutes);
 app.use('/notificacoes', notificacoesRoutes);
-app.use('/conversas', conversasRoutes);
+app.use('/funcionarios', funcionariosRoutes);
 app.use('/consultas',consultasRoutes)
 app.use('/contactos',contatosRoutes)
 // Iniciar o servidor 
