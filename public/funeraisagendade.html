@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <link rel="shortcut icon" type="x-icon" href="../assets/img/Logo2.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CED_CEM</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/funeraisagendade.css">
+    <link rel="stylesheet" href="font-icone/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="../CED CEM/home.html"><img src="assets/img/logo.png" alt=""></a>
+        <nav>
+            <a href="../CED CEM/home.html">Início</a>
+            <a href="../CED CEM/home.html">Quem somos</a>
+            <a href="../CED CEM/home.html">Serviços</a>
+            <a href="../CED CEM/home.html">Contato</a>
+        </nav>
+        <div class="control-menu">
+            <button class="btn-menu" id="openModal"><i class="fa-solid fa-bars"></i></button>
+            <button class="btn-notif" id="opennotificacoes-modal"><i class="fa-solid fa-bell"></i></button>
+            <a href="perfil.html"  class="btn-user"><i class="fa fa-user-circle"></i></a>
+        </div>
+    </header>
+      
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Menu</p>
+          <a href="entQ.html">Meus Entes Queridos</a>
+          <a href="cadastrarfalecido.html">Registar Funeral</a>
+          <a href="funeraisagendade.html">Funerais Agendados</a>
+          <a href="home.html">Sair</a>
+        </div>
+      </div>
+     <!-- Modal notificacoes -->
+  <div id="notificacoes-modal" class="notificacoes-modal">
+    <div class="notificacoes-modal-content">
+      <span class="notificacoes-close">&times;</span>
+      <p>Notificações</p>
+      <div class="notificacoes-icones">
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+      </div>
+      <div class="notificacoes-icones">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </div>
+      <div class="notificacoes-conteudo-modal">
+        <p>O funeral de Alberto Wia realizado no 
+          dia 16-05-2024, pela 10:00 na quadra 12,
+          lote 2 Precisa ser legalizado, no prazo de 5 anos.</p>
+      </div>
+      <div class="notificacoes-hora">
+        <span>Maio 13, 2024 08H40 Segunda-feira</span>
+      </div>
+      <div class="notificacoes-conteudo-modal">
+        <p>O funeral de Alberto Wia realizado no 
+          dia 16-05-2024, pela 10:00 na quadra 12,
+          lote 2 Precisa ser legalizado, no prazo de 5 anos.</p>
+      </div>
+      <div class="notificacoes-hora">
+        <span>Maio 13, 2024 08H40 Segunda-feira</span>
+      </div>
+    </div>
+  </div>
+        
+  <div class="container mt-4">
+    <h1 class="text-center">Funerais Agendados</h1>
+    <div class="d-flex justify-content-between mb-3">
+      
+      <div>
+        <a href="#" class="btn ">ver</a>
+      </div>
+      <div class="input-group" style="max-width: 300px;">
+        <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+    
+    <table class="table table-bordered">
+      <thead class="">
+        <tr>
+          <th>Nome Completo</th>
+          <th>Filiação</th>
+          <th>Causa da morte</th>
+          <th>Falecimento</th>
+          <th>Sepultamento</th>
+          <th>Localização</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Leandro Furtado Tubias</td>
+          <td>João Tubias - Maria Furtado</td>
+          <td>Tuberculose</td>
+          <td>10-12-1999</td>
+          <td>13-12-1999</td>
+          <td>Quadra : 17 - Lote : 144</td>
+          <td><a href="adiafuneral.html" class="btn btn-link">Adia Funeral</a></td>
+        </tr>
+        <!-- Adicione mais linhas conforme necessário -->
+      </tbody>
+    </table>
+  </div>
+
+    <script src="font-icone/js/all.min.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/notificacoes.js"></script>
+    <script src="js/entqmenu.js"></script>
+    <script src="js/homenotificacoes.js"></script>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

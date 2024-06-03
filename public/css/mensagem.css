@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  /* Estilo geral da página */
+  body {
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    overflow-x: hidden;
+    text-decoration: none;
+  }
+
+.sidebar {
+    height: 100vh;
+    background-color: #415b67 !important;
+  }
+  
+  .sidebar img{
+    width: 100%;
+  }
+  
+  .sidebar .nav-link{
+    margin: 10px 0;
+  }
+
+  #active{
+    background-color: #d5dce433;
+    border-radius: 0.6rem;
+    height: 3.5rem;
+  }
+  
+  .sidebar .nav-link:hover {  
+    color: #fff;
+  }
+
+  .nav-item{
+    margin-top: 2rem;
+  }
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+h2{
+    font-size: 1.3rem;
+    margin-left: 3rem;
+    position: absolute;
+    margin-top: -1rem;
+}
+
+.form-control{
+margin-left: 44rem;
+border-radius: 0.9rem;
+padding: 0.4rem 6rem;
+padding-left: 1rem;
+background: #b1b0b0;
+}
+
+::placeholder{
+  color: #fff !important;
+}
+
+.pesquisar{
+background: #b1b0b0;
+margin-left: -3rem;
+border-radius:0rem 1.0rem 1.0rem 0rem;
+color:#fff;
+border: none;
+}
+
+.pesquisar .fa-search{
+color: #fff;
+}
+
+.control-mensagem{
+  position: absolute;
+ margin-top: -4rem;
+ left: 18rem;
+ display: flex;
+ gap: 1rem;
+}
+
+.img-fundo{
+  position: absolute;
+  top: 4rem;
+  z-index: 999;
+}
+
+.line{
+  background: #000;
+  margin-left: 58rem;
+  position: absolute;
+  width: 0.3rem;
+  height: 2.3rem;
+}
+
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.sair{
+    margin-left: 2rem;
+    margin-top: 5rem;
+  }
+  
+  .btn{
+    color: #fff;
+    text-align: center;
+  }
+
+  .menu{
+    margin-left: 2rem;
+  }
+  
+  .fa-bars{
+    color: #333;
+    font-size: 1.3rem;
+  }
+
+  img{
+    margin-left: 20rem;
+  }
+
+  main{
+    background:#415b67;
+   height: 6rem;
+  }
+  
+  h1{
+    color: #fff;
+    margin-left: 50rem;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }

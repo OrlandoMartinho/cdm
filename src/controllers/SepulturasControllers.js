@@ -4,7 +4,7 @@ const dbPromise = db.promise();
 
 const UsersController = {
     cadastrarSepulturas: async (req, res) => {
-        const { quadra	,numero_de_lote,accessToken  } = req.body;
+        const { quadra,numero_de_lote,accessToken  } = req.body;
         // Verificar se todos os campos obrigatórios estão presentes
         if (!quadra || !numero_de_lote||!accessToken) {
             return res.status(400).json({ Mensagem: "Campos incompletos" });
@@ -14,7 +14,7 @@ const UsersController = {
             return res.status(401).json({ Mensagem: "Campos incompletos" });
         }
 
-        const createQuery = "INSERT INTO sepulturas (quadra,numero_de_lote) VALUES ( ?,?)";                
+        const createQuery = "INSERT INTO sepulturas (quadra,numero_de_lote) VALUES (?,?)";                
         const [insetUser]=await  dbPromise.query(createQuery,[quadra,numero_de_lote])                              
         return res.status(201).json({ Mensagem: "Sepultura cadastrada com sucesso",id_sepultura:insetUser.insertId});
                                    

@@ -103,24 +103,15 @@ connection.connect(async (err) => {
           email VARCHAR(45) DEFAULT NULL,
           genero VARCHAR(45) DEFAULT NULL,
           data_de_nascimento DATE DEFAULT NULL,
-          morada varchar( 255) DEFAULT NULL,
+          morada varchar(255) DEFAULT NULL,
           token TEXT DEFAULT NULL,
           tipo INT DEFAULT NULL,
           numero_do_bi VARCHAR(45) DEFAULT null,
-          responsavel VARCHAR(255) DEFAULT null
+          responsavel VARCHAR(255) DEFAULT null,
+          data_de_ingresso DATE DEFAULT null,
+          cargo VARCHAR(45) DEFAULT NULL
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;`,
-
-      `CREATE TABLE IF NOT EXISTS funcionarios (
-          id_funcionario INT AUTO_INCREMENT PRIMARY KEY,
-          email VARCHAR(90) DEFAULT NULL,
-          data_de_nascimento DATE DEFAULT NULL,
-          nome VARCHAR(45) DEFAULT NULL,
-          telefone VARCHAR(45) DEFAULT NULL,
-          genero VARCHAR(45)  DEFAULT 0,
-          data_de_ingresso DATE DEFAULT NULL,
-          cargo VARCHAR(10) DEFAULT NULL
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;`,
-    
+       
       `CREATE TABLE IF NOT EXISTS contatos (
           id_contato INT AUTO_INCREMENT PRIMARY KEY,
           email VARCHAR(45) DEFAULT NULL,
@@ -143,7 +134,8 @@ connection.connect(async (err) => {
           nacionalidade VARCHAR(255) DEFAULT null,
           numero_do_acento_do_obito VARCHAR(45) DEFAULT null,
           parentesco VARCHAR(255) DEFAULT null,
-          id_sepultura INT DEFAULT null
+          id_sepultura INT DEFAULT null,
+          rupe TEXT DEFAULT null
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;`,
     
       `CREATE TABLE IF NOT EXISTS sepulturas (

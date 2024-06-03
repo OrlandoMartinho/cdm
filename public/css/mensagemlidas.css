@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  /* Estilo geral da página */
+  body {
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    overflow-x: hidden;
+    text-decoration: none;
+  }
+
+.sidebar {
+    height: 170vh;
+    background-color: #415b67 !important;
+  }
+  
+  .sidebar img{
+    width: 100%;
+  }
+  
+  .sidebar .nav-link{
+    margin: 10px 0;
+    border-radius: 0.6rem;
+  }
+
+  #active{
+    background-color: #d5dce433;
+  }
+  
+  .sidebar .nav-link:hover {  
+    color: #fff;
+  }
+
+  .nav-item{
+    margin-top: 2rem;
+  }
+
+  .main-content {
+    margin-left: 24px;
+    padding: 20px;
+}
+
+
+.form-control {
+    border-radius: 0.2rem;
+}
+
+.form-icon {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    margin-right: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-buttons {
+    text-align: right;
+}
+
+.btn-secondary {
+    margin-right: 10px;
+}
+
+
+.main-content {
+    flex: 1;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info p {
+    margin-right: 20px;
+}
+
+.user-info input[type="search"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.main-content {
+    flex: 1;
+    background-color: #f4f4f4;
+    margin-left: 250px; /* Adjust as per your sidebar width */
+    padding: 20px;
+}
+
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info p {
+    margin-right: 20px;
+}
+
+.user-info input[type="search"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.message-details {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.message-details h4 {
+    margin: 0 0 10px 0;
+}
+
+.message-details span {
+    color: #888;
+}
+
+.email-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.sair{
+    margin-left: 2rem;
+    margin-top: 5rem;
+  }
+  
+  .btn{
+    color: #fff;
+    text-align: center;
+  }
+
+  .menu{
+    margin-left: 2rem;
+  }
+  
+  .fa-bars{
+    color: #333;
+    font-size: 1.3rem;
+  }
+
+  img{
+    margin-left: 20rem;
+  }
+
+  .message{
+    margin-top: 6rem;
+  }
+
+  p a{
+    text-decoration: none;
+    color: #415B67;
+    font-weight: bold;
+  }
+
+  .ative{
+    color: #888;
+    font-weight: 500;
+  }
+
+  .control-mensagem{
+    display: flex;
+    position: absolute;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    gap: 2rem;
+  }
+
+  .email-body{
+    background: #eeeeee !important;
+    border: none;
+  }
+
+
+  #active{
+    background-color: #d5dce433;
+    border-radius: 0.6rem;
+    height: 3.5rem;
+  }
+
+main{
+    background:#415b67;
+   height: 6rem;
+  }
+  
+  h1{
+    color: #fff;
+    margin-left: 50rem;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }

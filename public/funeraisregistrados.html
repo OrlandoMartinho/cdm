@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+  <link rel="shortcut icon" type="x-icon" href="../assets/img/Logo2.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CED_CEM</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/funeraisregistrados.css">
+    <link rel="stylesheet" href="font-icone/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../assets/img/logo.png" alt=""></a>
+        <h1>Administrador Aderson Cangahi</h1>
+    </header>
+    <div class="container my-5">
+      <h2 class="text-center">Funerais</h2>
+      <div class="row">
+        <div class="iconer-voltar">
+          <a href="admin.html"><i class="fa fa-arrow-left"></i></a>  
+        </div>
+		<a href="#" id="openModal">Ver</a>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
+      </div>
+          <div class="col-md-12">
+              <table class="table table-bordered mt-4">
+                  <thead class="table color_tabela">
+                      <tr>
+                          <th>ID</th>
+                          <th>Nome completo</th>
+                          <th>Gênero</th>
+                          <th>ID Resp</th>
+                          <th>Nome Ent.Q</th>
+                          <th>Filiação</th>
+                          <th>Nacionalidade</th>
+                          <th>Data Nasc/Mort</th>
+                          <th>Data do Sepultao</th>
+                          <th>Data Nasc/Mort</th>
+                          <th>Localização</th>
+                          <th>Controle</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>1</td>
+                          <td>João Tubias Maria Furtado</td>
+                          <td>M</td>
+                          <td>1</td>
+                          <td>Orlando Casto Saiombo</td>
+                          <td>Manuel Tubias Sandra Furtado</td>
+                          <td>Nacional</td>
+                          <td>15/07/1999 20/09/2024</td>
+                          <td>26/09/2024</td>
+                          <td>Quadra 14-Lote 123</td>
+                          <td>
+                            <a href="#" class="btn modal-delete"><i class="	fa fa-trash" aria-hidden="true"></i></a>
+                            <a href="#" class="btn modal-entrar"><i class="	fa fa-edit" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+  <!-- Modal ver -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <a href="#">Crianças</a>
+      <a href="#">Jovens</a>
+      <a href="#">Adultos</a>
+      <a href="#">Legalizados</a>
+      <a href="#">Não lecalizados</a>
+    </div>
+  </div>
+<script src="font-icone/js/all.min.js"></script>
+<script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/funeraisregistrados.js"></script>
+</body>
+</html>

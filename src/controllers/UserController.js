@@ -3,12 +3,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const secretKey = require('../private/secretKey.json');
 const token = require('../utils/token');
-const validarEmail = require('../utils/verificarEmail')
 const gerarCodigoDeVerificacao=require('../utils/gerarcodigoDeVerificacao')
-const enviarEmail = require('../utils/enviarEmail')
 const saltRounds = 10;
-const fs=require('fs')
-const path=require('path')
 const salt = bcrypt.genSaltSync(saltRounds);
 const notify = require('../controllers/NotificacoesController');
 const dbPromise = db.promise();
@@ -33,9 +29,9 @@ const UsersController = {
         try {    
             const senhaEncriptada = await bcrypt.hashSync(senha, salt);
             // Inserir o novo usuário na tabela `usuarios`
-            const createQuery = "INSERT INTO usuarios (nome, senha, genero, email, data_de_nascimento,morada) VALUES (?, ?, ?, ?, ?,?)";
+            const createQuery = "INSERT INTO usuarios (tipo,nome, senha, genero, email, data_de_nascimento,morada) VALUES (?, ?, ?, ?, ?,?)";
                         
-            const [insetUser]=await  dbPromise.query(createQuery,[nome, senhaEncriptada, genero,email,data_de_nascimento,morada])
+            const [insetUser]=await  dbPromise.query(createQuery,[2,nome, senhaEncriptada, genero,email,data_de_nascimento,morada])
                     
             const notificacao = "O "+email+" Cadastrou-se na CDM";
             notify.addNotificacao(notificacao,0);                         
@@ -66,12 +62,12 @@ const UsersController = {
             if (!isPasswordValid) {
                 return res.status(401).json({ Mensagem: "Senha incorreta" });
             } else {
-                const accessToken = jwt.sign({usuarioEmail:email, id_usuario: usuario.id_usuario,usuarioTipo:1,senha:usuario.senha}, secretKey.secretKey);
+                const accessToken = jwt.sign({usuarioEmail:email, id_usuario: usuario.id_usuario,usuarioTipo:usuario.tipo,senha:usuario.senha}, secretKey.secretKey);
                 const updateQuery = 'UPDATE usuarios SET token = ? WHERE id_usuario = ?';
                 const params = [accessToken,usuario.id_usuario];
                 await dbPromise.query(updateQuery, params) 
                       
-                return res.status(201).json({ Mensagem: "Autenticação bem-sucedida", accessToken :accessToken});   
+                return res.status(201).json({ Mensagem: "Autenticação bem-sucedida", accessToken :accessToken,usuarioTipo:usuario.tipo});   
            }    
 
         } catch (err) {
@@ -104,7 +100,7 @@ const UsersController = {
             const updateQuery1 = 'UPDATE usuarios SET nome=?, senha=?, genero=?, email=?, data_de_nascimento=?,morada = ? WHERE id_usuario = ?';
             await dbPromise.query(updateQuery1,[nome,senhaEncriptada, genero, email,data_de_nascimento,morada,id_usuario])
                 
-            const accessToken2 = jwt.sign({ id_usuario: token.usuarioId(accessToken),usuarioEmail:email,senha:token.usuarioSenha(accessToken) ,usuarioTipo:1}, secretKey.secretKey);
+            const accessToken2 = jwt.sign({ id_usuario: token.usuarioId(accessToken),usuarioEmail:email,senha:token.usuarioSenha(accessToken),usuarioTipo:1}, secretKey.secretKey);
                                     
             const updateQuery = 'UPDATE usuarios SET token = ? WHERE id_usuario = ?';
                 
@@ -112,7 +108,7 @@ const UsersController = {
                                 
             await dbPromise.query(updateQuery,params)
            
-            return res.status(201).json({ Mensagem: "Edição bem sucedida", Novo_token:accessToken2 });   
+            return res.status(201).json({ Mensagem: "Edição bem sucedida", novo_token:accessToken2 ,usuarioTipo:token.usuarioTipo(accessToken)});   
                     
         } catch (err) {
             console.error({ Erro: err });
@@ -129,7 +125,7 @@ const UsersController = {
         if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=0){
             return res.status(401).json({mensagem:"Token inválido"})
         }
-        const selectQuery2 = "SELECT * FROM usuarios";
+        const selectQuery2 = "SELECT * FROM usuarios where tipo = 2";
         const [usersResults] =await dbPromise.query(selectQuery2)       
         return res.status(200).json({usuarios:usersResults})
     },
@@ -137,7 +133,7 @@ const UsersController = {
         try {
             const { accessToken } = req.body;
             const id_usuario = token.usuarioId(accessToken);
-            if (!id_usuario || !await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=1) {
+            if (!id_usuario || !await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=2) {
                 return res.status(401).json({ mensagem: 'Token inválido' });
             }
             const deleteUsuarioQuery = 'DELETE FROM usuarios WHERE id_usuario = ?';
@@ -154,7 +150,7 @@ const UsersController = {
     obterUsuarioPorAccessToken: async (req, res) => {
         const { accessToken } = req.body;
         console.log(await token.verificarTokenUsuario(accessToken))
-        if (!accessToken || ! await (token.verificarTokenUsuario(accessToken))||token.usuarioTipo(accessToken)!=1 ) {
+        if (!accessToken || ! await (token.verificarTokenUsuario(accessToken))||token.usuarioTipo(accessToken)!=2 ) {
             return res.status(401).json({ mensagem: 'Token inválido' });
         }
         const selectQuery = 'SELECT * FROM usuarios WHERE token = ?';

@@ -4,7 +4,7 @@ const notify = require('../controllers/NotificacoesController');
 const  responderEmail=require('../utils/ResponderContacto')
 const dbPromise = db.promise();
 const ContactosController = {
-
+    
     // Método para cadastrar um novo contato
     cadastrarContacto: async (req, res) => {
         const { mensagem, email ,nome} = req.body;
@@ -22,7 +22,7 @@ const ContactosController = {
     listarContactos: async (req, res) => {
         const { accessToken } = req.body;
 
-        if (token.usuarioTipo(accessToken)!=0||!(await token.verificarTokenUsuario(accessToken))) {
+        if (token.usuarioTipo(accessToken)!=1||!(await token.verificarTokenUsuario(accessToken))) {
             return res.status(401).json({ mensagem: 'Tokens inválidos' });
         }
 
@@ -48,7 +48,7 @@ const ContactosController = {
     eliminarContactoPeloId: async (req, res) => {
         const { accessToken ,id_contato} = req.body;
 
-        if (token.usuarioTipo(accessToken)!=0||!(await token.verificarTokenUsuario(accessToken))) {
+        if (token.usuarioTipo(accessToken)!=1||!(await token.verificarTokenUsuario(accessToken))) {
             return res.status(401).json({ mensagem: 'Tokens inválidos' });
         }
 
@@ -61,7 +61,7 @@ const ContactosController = {
 
         const { accessToken, conteudo,email } = req.body;
 
-        if(!await token.verificarTokenUsuario(accessToken)||token.usuarioNome(accessToken)!='administarador'){
+        if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=1){
            return res.status(401).json({Mensagem:"Token não autorizado"})
         }
 

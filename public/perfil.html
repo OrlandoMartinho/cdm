@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <link rel="shortcut icon" type="x-icon" href="../assets/img/Logo2.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Falecido</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="font-icone/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="../CED CEM/home.html"><img src="../CED CEM/assets/img/logo.png" alt=""></a>
+        <nav>
+            <a href="../CED CEM/home.html">Início</a>
+            <a href="../CED CEM/home.html">Quem somos</a>
+            <a href="../CED CEM/home.html">Serviços</a>
+            <a href="../CED CEM/home.html">Contato</a>
+        </nav>
+        <div class="control-menu">
+            <button class="btn-menu" id="openUniqueModal"><i class="fa-solid fa-bars"></i></button>
+            <button class="btn-notif" id="opennotificacoes-modal"><i class="fa-solid fa-bell"></i></button>
+            <button class="btn-user"><i class="fa fa-user-circle"></i></button>
+        </div>
+    </header>
+
+    <!-- Modal menu -->
+  <div id="unique-modal" class="unique-modal">
+    <div class="unique-modal-content">
+      <span class="unique-close">&times;</span>
+      <p>Menu</p>
+      <div class="unique-conteudo-modal">
+        <a href="#">Meus Entes Queridos</a>
+        </div>
+        <div class="unique-conteudo-modal">
+            <a href="#">Registar Funeral</a>
+        </div>
+        <div class="unique-conteudo-modal">
+            <a href="#">Agendar Funeral</a>
+        </div>
+        <div class="unique-conteudo-modal">
+            <a href="home.html">Sair</a>
+        </div>
+    </div>
+  </div>
+
+    <!-- Modal notificacoes -->
+  <div id="notificacoes-modal" class="notificacoes-modal">
+    <div class="notificacoes-modal-content">
+      <span class="notificacoes-close">&times;</span>
+      <p>Notificações</p>
+      <div class="notificacoes-icones">
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+      </div>
+      <div class="notificacoes-icones">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </div>
+      <div class="notificacoes-conteudo-modal">
+        <p>O funeral de Alberto Wia realizado no 
+          dia 16-05-2024, pela 10:00 na quadra 12,
+          lote 2 Precisa ser legalizado, no prazo de 5 anos.</p>
+      </div>
+      <div class="notificacoes-hora">
+        <span>Maio 13, 2024 08H40 Segunda-feira</span>
+      </div>
+      <div class="notificacoes-conteudo-modal">
+        <p>O funeral de Alberto Wia realizado no 
+          dia 16-05-2024, pela 10:00 na quadra 12,
+          lote 2 Precisa ser legalizado, no prazo de 5 anos.</p>
+      </div>
+      <div class="notificacoes-hora">
+        <span>Maio 13, 2024 08H40 Segunda-feira</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-container mt-5">
+                    <div class="form-title ">
+                        <h2>Meu Perfil</h2>
+                        <div class="editar" id="openModal">
+                            <a href="#">Editar</a> 
+                        </div>
+                        <div id="modal" class="modal">
+                            <div class="modal-content">
+                              <span class="close">&times;</span>
+                                <h3>Editar Perfil</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="datadenascimento">Data de nascimento</label>
+                                        <input type="date" class="form-control" id="dataFalecimento">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contatoResponsavel">E-mail</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telemovel">Telemóvel</label>
+                                        <input type="text" class="form-control" id="telemovel">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="senhaantiga">Senha antiga</label>
+                                        <input type="password" class="form-control" id="senhaantiga">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="senhanova">Senha nova</label>
+                                        <input type="password" class="form-control" id="senhanova">
+                                    </div>
+                                    <button type="submit">Salvar</button>
+                                </form>
+                            </div>
+                          </div>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Francisco Sabalo João Fracol</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="datadenasimento">Data de nascimento</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="datadenasimento">12/12/2000</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">joaojose@gmail.com</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="dataHoraOriginal">Telemóvel</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="dataHoraNova">920 000 000</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">******************</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/menu.js"></script>
+<script src="js/editarperfil.js"></script>
+<script src="font-icone/js/all.min.js"></script>
+<script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/perfilnotificacoes.js"></script>
+<script src="js/menuperfil.js"></script>
+</body>
+</html>

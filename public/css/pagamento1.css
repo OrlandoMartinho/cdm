@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'roboto', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    margin-bottom: 30px;
+}
+
+.progress-container {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn_seguinte{
+    text-decoration: none;
+    margin-left: 37rem;
+    border-radius: 0.7rem;
+    background: #415b67;
+    padding: 0.5rem 1rem;
+    color: #fff;
+}
+
+.btn_seguinte:hover{
+    color: #fff;
+}
+
+.progress-bar{
+    background: #415b67;
+}

@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+
+
+body{
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+header {
+    background-color: #415b67;
+    color: #fff;
+    padding: 10px 7%;
+    position: sticky;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+h1{
+font-size: 1.2rem;
+}
+
+.control-table thead{
+    background-color: #415b67;
+    color: #fff;
+    font-size: .8rem;
+}
+.control-table tr{
+    font-size: .8rem;
+}
+
+.form-input{
+    border: 1px solid #415b67;
+    border-radius: 5rem;
+    padding: .3rem;
+}
+
+.form-input input{
+    padding: 0 .6rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.form-input .btn-search{
+    border: none;
+    background-color: transparent;
+
+}
+
+.control-menu{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.control-menu button{
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+}
+
+h2{
+    color: #415b67;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table .btn-primary {
+    display: block;
+    margin: auto;
+}
+
+.container a{
+ text-decoration: none;  
+ color: #415b67 ; 
+ font-size: 1.2rem;
+}
+
+.input-group{
+    margin-top: 2rem;
+}
+
+.color_tabela{
+background: #415b67 ; 
+border: solid 1px #415b67;
+}
+
+th{
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.modal-delete .fa-trash{
+    color: red;
+}
+
+.modal-content{
+    margin-top: 16rem !important;
+    width: 14rem !important;
+    position: absolute;
+    margin-left: 1rem;
+    padding: 1.2rem;
+    border: none;
+    box-shadow: 4px 10px 15px #aaaaaa41;
+  }
+  
+  .close{
+    color: #1f2a2c;
+    font-size: 1.9rem;
+    cursor: pointer;
+  }
+    
+  .modal a{
+    text-decoration: none;
+    margin: 0.5rem;
+    color: #1f2a2c;
+  }
+  
+  .modal-entrar{
+    cursor: pointer;
+  }
+
+  .iconer-voltar{
+    margin-top: -40px;
+    position: absolute;
+  }

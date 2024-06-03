@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <link rel="shortcut icon" type="x-icon" href="../assets/img/Logo2.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CED_CEM</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header id="header">
+        <a href="./index.html"><img src="./assets/img/logo.png" alt=""></a>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#quem-somos">Quem somos</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+            <a id="openModal" class="modal-entrar">Entrar</a>
+            <a href="cadastrar.html" class="btn-login">Cadastrar</a>
+        </nav>
+    </header>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Entrar como</p>
+          <a href="#">Admin</a>
+          <a href="#">Responsável</a>
+        </div>
+      </div>
+        <div id="carouselExampleIndicators" class="carousel slide ">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner banner">
+              <div class="carousel-item active">
+                <img src="./assets/img/slide1.png" class="d-block w-100" >
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/slide2.png" class="d-block w-100" >
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/slide3.png" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/slide2.png" class="d-block w-100">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <section id="quem-somos">
+            <h2>Quem somos</h2>
+            <p>
+                A CED_CEM é um sistema de gestão, que gerencia de forma prática e eficiente o cemitério do Benfica. É
+                uma plataforma que centraliza todas as ferramentas necessárias para o gerenciamento do cemitério do
+                Benfica, e oferece para a população o acesso do status onde eles podem encontrar facilmente a sepultura
+                de seus familiares acedendo informações sobre os de fundos do cemitério Benfica.
+            </p>
+            <p>
+                A CED_CEM, visa no bom gerenciamento dos dados de cadáveres.
+                Realiza o controle de óbitos e sepultamentos.
+                A plataforma garante confiança e segurança no que diz respeito aos dados dos
+                de fundos.
+            </p>
+            <div class="img-somos">
+              <img src="assets/img/quem_somos_1-.png" alt="">
+            </div>
+        </section>
+        <section id="servicos">
+            <section id="servico">
+                <h1>Serviços</h1>
+                <div class="cards">
+
+                    <div class="card">
+                        <img src="assets/img/img-velorio.png" alt="">
+                        <div>
+                            <h2>Velório</h2>
+                            <p>
+                                Nossos espaços possibilitam realizar o velório do seu ente querido com tranquilidade e
+                                segurança, com infraestrutura completa e humanizada.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/img/img-sepultamento.png" alt="">
+                        <div>
+                            <h2>Sepultamento</h2>
+                            <p>
+                                Temos unidades exclusivas de sepultamento com flexibilidade de horários, o que
+                                proporciona maior comodidade em todos os momentos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/img/manutenção.png" alt="">
+                        <div>
+                            <h2>Manutenção</h2>
+                            <p>
+                                Um velório é uma cerimônia fúnebre que ocorre antes do sepultamento ou cremação do
+                                corpo.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+
+        <div id="contato">
+            <div class="left">
+                <h1>Contato</h1>
+                <h3>Alguma pergunta? Envie sua mensagem e entraremos em contato.</h3>
+                <ul>
+                    <li>
+                        <img src="./assets/img/Phone.png" alt="">
+                        <p>+244 920 000 000</p>
+                    </li>
+                    <li>
+                        <img src="./assets/img/Email.png" alt="">
+                        <p>ced_cem30@gmail.com</p>
+                    </li>
+                    <li>
+                        <img src="./assets/img/Location on.png" alt="">
+                        <p>R. dos Presentes, Belas</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rigth">
+                <form action="">
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label> Seu Nome</label>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="email" name="email" id="email" required>
+                        <label>Seu E-mail</label>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label>Sua Mensagem</label>
+                    </div>
+
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </div>
+
+        </div>
+
+
+    <footer>
+        <div class="footer">
+          <div>
+            <img class="logofooter" src="assets/img/Group 2.png" alt="">
+          </div>   
+          <div class="line">o</div>        
+                <ul class="icon">
+                    <li><img src="./assets/img/icons8_facebook_52px.png" alt=""></li>
+                    <li><img src="./assets/img/icons8_linkedin_52px.png" alt=""></li>
+                    <li><img src="./assets/img/icons8_whatsapp_64px.png" alt=""></li>
+                </ul>
+        </div>
+        <p class="copy">Copyright 2024 &copy;  Cemitério da <span>CED CEM</span>. Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

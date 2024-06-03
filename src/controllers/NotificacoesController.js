@@ -1,5 +1,4 @@
 const db = require('../config/dbConfig');
-const data = require('../utils/converterData');
 const token = require('../utils/token');
 const dbPromise = db.promise();
 
@@ -14,7 +13,6 @@ const notificacoesController = {
         }
     },
     obterTodasNotificacoes: async (req, res) => {
-
         const {accessToken} = req.body
         if(!await token.verificarTokenUsuario(accessToken)){
             return res.status(401).json({mensagem:"Token invalido"})
@@ -22,27 +20,18 @@ const notificacoesController = {
         const id_usuario = token.usuarioId(accessToken)
         const selectQuery2 = "SELECT * FROM notificacoes where id_usuario = ?";
         const [notificacoesResult]=await dbPromise(selectQuery2,id_usuario)
-
-       return res.status(200).json({notificacoes:notificacoesResult})
+        return res.status(200).json({notificacoes:notificacoesResult})
     },
     apagarTodasNotificacoesDoUsuario: async (req, res) => {
-        
         const {accessToken} = req.body
-
         if(!await token.verificarTokenUsuario(accessToken)){
             return res.status(401).json({mensagem:"Token invalido"})
         }
         const id_usuario = token.usuarioId(accessToken);
-
         const deleteQuery='DELETE  FROM notificacoes WHERE id_usuario = ?'
-
         await dbPromise.query(deleteQuery,id_usuario)
-
-        return res.status(200).json({mensagem:"Notificações eliminadas"})
-         
-                                                                                           
-    }
-    
+        return res.status(200).json({mensagem:"Notificações eliminadas"})                                                                                      
+    }    
 };
 
 module.exports = notificacoesController;

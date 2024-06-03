@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'roboto', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    margin-bottom: 30px;
+    background: #415b67;
+    width: 210vw;
+    position: absolute;
+    top: -1rem;
+    left: -6rem;
+    height: 6rem;
+}
+
+.progress-container{
+    margin-top: 9rem;
+}
+
+h2{
+    margin-right:129rem;
+    margin-top: 2rem;
+    color: #fff;
+}
+
+.progress-container {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn_seguinte{
+    text-decoration: none;
+    margin-left: 37rem;
+    border-radius: 0.7rem;
+    background: #415b67;
+    padding: 0.5rem 1rem;
+    color: #fff;
+}
+
+.btn_seguinte:hover{
+    color: #fff;
+}
+
+.progress{
+    border-radius: 0.9rem;
+}
+
+.progress-bar{
+    background: #415b67;
+    border-radius: 0.9rem;
+}
+
+.circule{
+    position: absolute;
+    margin-left: 10rem;
+    background: #415b67;
+    width:4%;
+    height:9%;
+    border-radius: 20rem;
+    margin-top: -1.2rem;
+}
+
+.dados-falecido{
+    display: flex;
+    gap:12rem;
+    position: absolute;
+    margin-top: -5rem;
+    margin-left: 5rem;
+}
+
+.gerir-rupe{
+    position: absolute;
+    margin-left: 26rem;
+    background: #415b67;
+    width:4%;
+    height:9%;
+    border-radius: 20rem;
+    margin-top: -1.2rem;
+}
+
+.confirma{
+    position: absolute;
+    margin-left: 43rem;
+    background: #E9ECEF;
+    width:4%;
+    height:9%;
+    border-radius: 20rem;
+    margin-top: -1.2rem;
+}
+
+#nomeCompleto{
+    border: none;
+    border-bottom: 3px solid #415b67;
+}
+
+#numeroBI{
+    border: none;
+    border-bottom: 3px solid #415b67;
+}
+
+.rup-controle{
+    margin-top: 4rem;
+}
+
+.btn-voltar{
+    margin-left: -7rem;
+    margin-top: -3.3rem;
+}

@@ -22,7 +22,8 @@ const usersRoutes = require('./routes/UserRoutes');
 const notificacoesRoutes = require('./routes/NotificacoesRoutes');
 const funcionariosRoutes = require('./routes/FuncionariosRoutes');
 const sepulturaRoutes=require('./routes/SepulturasRoutes')
-const contatosRoutes=require('./routes/contatosRoutes')
+const contatosRoutes=require('./routes/contatosRoutes');
+const funeralRoutes =require('./routes/FuneraisRoutes')
 
 
 // Adicionar rotas
@@ -31,6 +32,7 @@ app.use('/notificacoes', notificacoesRoutes);
 app.use('/funcionarios', funcionariosRoutes);
 app.use('/sepulturas',sepulturaRoutes)
 app.use('/contactos',contatosRoutes)
+app.use('/funerais',funeralRoutes)
 // Iniciar o servidor 
 const PORT = process.env.PORT||port.PORT;
 const HOST =process.env.HOST||port.HOST

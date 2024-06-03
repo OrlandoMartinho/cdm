@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" type="x-icon" href="../assets/img/Logo2.png">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="../img/titulo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CED_CEM</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cadastrafuncionarios.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+            <div class="position-sticky">
+				<div class="sidebar-sticky pt-3">
+					<a href="#"><img src="assets/img/logo.png" alt="" class="text-center"></a></h3>
+					<ul class="nav flex-column">
+					  <li class="nav-item">
+						<a class="nav-link active text-light" href="#"  id="active">Dashboard</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link text-light" href="responsavel.html">
+						  <i class="bi bi-person-plus"></i>
+							Responsáveis
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link text-light" href="funcionariosadmin.html">
+						  <i class="bi bi-envelope"></i>
+							  Funcionários
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link text-light" href="funeraisregistrados.html">
+						  <i class="bi bi-file-earmark"></i>
+							  Funerais
+						</a>
+					  </li>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link text-light" href="sepulturaadmin.html">
+						<i class="bi bi-file-earmark"></i>
+							Sepulturas
+					  </a>
+					</li>
+					</ul>
+					<div class="mt-4">
+					  <div class="sair">
+						<a class="btn" href="index.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Sair</a>
+					  </div>
+					</div>
+				</div>
+            </div>
+          </nav>
+    
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="h2">Administrador Aderson Cangaih</h1>
+            </div>
+            <div class="main-content">
+              <form>
+                  <div class="form-group">
+                      <input type="text" id="nome" class="form-control" placeholder="Nome completo">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="email" class="form-control" placeholder="Email ou número de telefone">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="bi" class="form-control" placeholder="Nº do BI">
+                  </div>
+                  <div class="form-group">
+                      <label class="form-label"><i class="bi bi-gender-ambiguous form-icon"></i>Gênero</label>
+                      <div>
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="genero" id="feminino" value="Feminino">
+                              <label class="form-check-label" for="feminino">Feminino</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino">
+                              <label class="form-check-label" for="masculino">Masculino</label>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="morada" class="form-control" placeholder="Morada">
+                  </div>
+                  <div class="form-group">
+                      <label for="nascimento" class="form-label"><i class="bi bi-calendar form-icon"></i>Data de nascimento</label>
+                      <input type="date" id="nascimento" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <label for="ingresso" class="form-label"><i class="bi bi-calendar-check form-icon"></i>Data de ingresso</label>
+                      <input type="date" id="ingresso" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="cargo" class="form-control" placeholder="Cargo">
+                  </div>
+                  <div class="form-group">
+                      <input type="tel" id="contacto" class="form-control" placeholder="Telefone">
+                  </div>
+                  <div class="form-buttons">
+                      <button type="submit" class="btn btn-dark">Cadastrar</button>
+                  </div>
+              </form>
+          </div>
+          </main>
+        </div>
+      </div>
+      <script src="font-icone/js/all.min.js"></script>
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
