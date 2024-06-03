@@ -20,7 +20,7 @@ app.use(cors());
 // Importar as rotas
 const usersRoutes = require('./routes/UserRoutes');
 const notificacoesRoutes = require('./routes/NotificacoesRoutes');
-const conversasRoutes = require('./routes/ConversasRoutes');
+const conversasRoutes = require('./routes/FuncionariosRoutes');
 const consultasRoutes=require('./routes/ConsultasRoutes')
 const contatosRoutes=require('./routes/contatosRoutes')
 
