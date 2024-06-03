@@ -1,16 +1,5 @@
 const db = require('../config/dbConfig');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const secretKey = require('../private/secretKey.json');
 const token = require('../utils/token');
-const validarEmail = require('../utils/verificarEmail')
-const gerarCodigoDeVerificacao=require('../utils/gerarcodigoDeVerificacao')
-const enviarEmail = require('../utils/enviarEmail')
-const saltRounds = 10;
-const fs=require('fs')
-const path=require('path')
-const salt = bcrypt.genSaltSync(saltRounds);
-const notify = require('../controllers/NotificacoesController');
 const dbPromise = db.promise();
 
 const UsersController = {

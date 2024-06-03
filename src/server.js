@@ -21,7 +21,7 @@ app.use(cors());
 const usersRoutes = require('./routes/UserRoutes');
 const notificacoesRoutes = require('./routes/NotificacoesRoutes');
 const funcionariosRoutes = require('./routes/FuncionariosRoutes');
-const consultasRoutes=require('./routes/ConsultasRoutes')
+const sepulturaRoutes=require('./routes/SepulturasRoutes')
 const contatosRoutes=require('./routes/contatosRoutes')
 
 
@@ -29,7 +29,7 @@ const contatosRoutes=require('./routes/contatosRoutes')
 app.use('/usuarios', usersRoutes);
 app.use('/notificacoes', notificacoesRoutes);
 app.use('/funcionarios', funcionariosRoutes);
-app.use('/consultas',consultasRoutes)
+app.use('/sepulturas',sepulturaRoutes)
 app.use('/contactos',contatosRoutes)
 // Iniciar o servidor 
 const PORT = process.env.PORT||port.PORT;
