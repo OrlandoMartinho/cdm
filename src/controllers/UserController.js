@@ -38,7 +38,7 @@ const UsersController = {
             const [insetUser]=await  dbPromise.query(createQuery,[nome, senhaEncriptada, genero,email,data_de_nascimento,morada])
                     
             const notificacao = "O "+email+" Cadastrou-se na CDM";
-            notify.addNotificacao(notificacao,insetUser.insertId);                         
+            notify.addNotificacao(notificacao,0);                         
             return res.status(201).json({ Mensagem: "Usuário cadastrado com sucesso",id_usuario:insetUser.insertId});
               
         } catch (err) {
