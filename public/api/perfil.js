@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(notificacoes); // Exibe o array de notificações revertido
 
                 notificacoes.forEach(function(notificacao) {
-                    adicionarNotificacao(notificacao.titulo, notificacao.descricao);
+                    adicionarNotificacao(notificacao.data_da_notificacao, notificacao.descricao);
                 });
             })
             .catch(error => {
