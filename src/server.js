@@ -5,7 +5,7 @@ const port = require('./private/Port.json');
 const db = require('./config/dbConfig');
 const jwt = require('jsonwebtoken');
 const secretKey=require('./private/secretKey.json');
-
+const path=require('path')
  
 
 
@@ -36,6 +36,12 @@ app.use('/funerais',funeralRoutes)
 // Iniciar o servidor 
 const PORT = process.env.PORT||port.PORT;
 const HOST =process.env.HOST||port.HOST
+
+app.use(express.static(path.join(__dirname,'..', 'public'))); 
+// Rota para retornar a página HTML
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname,'..', 'public', 'index.html'));
+});
 
 // Inicializando o servidor
 app.listen(PORT,HOST,() => {
