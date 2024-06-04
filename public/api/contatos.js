@@ -1,4 +1,50 @@
 
+function obterNotificacoes() {
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            accessToken: localStorage.getItem("token")
+        })
+    };
+
+    fetch(`${base_url}notificacoes/`, requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao fazer a requisição: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const notificacoes = data.notificacoes.reverse(); // Reverte o array de notificações
+            console.log(notificacoes); // Exibe o array de notificações revertido
+
+            notificacoes.forEach(function(notificacao) {
+                adicionarNotificacao(notificacao.data_da_notificacao, notificacao.descricao);
+            });
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });
+}
+
+const adicionarNotificacao = (text, date) => {
+    const notificationContent = document.getElementById('notificacoes-conteudo-modal');
+
+    const notification = document.createElement('div');
+    notification.className = 'notificacoes-conteudo-modal';
+    notification.innerHTML = `
+        <p>${text}</p>
+        <div class="notificacoes-hora">
+            <span>${date}</span>
+        </div>
+    `;
+
+    notificationContent.appendChild(notification);
+};
+
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 function cadastrarContactos(dados) {

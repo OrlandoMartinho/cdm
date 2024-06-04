@@ -1,6 +1,8 @@
 const base_url = 'http://localhost:3000/';
 
 
+
+
 const dados = {
     accessToken: localStorage.getItem("token"),
 };
