@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" type="x-icon" href="../assets/img/Logo2.png">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="../img/titulo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CED_CEM</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admim.css">
+    <script src="api/autenticacaoUser.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+            <div class="position-sticky">
+              <div class="sidebar-sticky pt-3">
+                <a href="#"><img src="assets/img/logo.png" alt="" class="text-center"></a></h3>
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link active text-light" href="#"  id="active" >Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="responsaveladmin.html">
+                      <i class="bi bi-person-plus"></i>
+						Responsáveis
+					</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="funcionariosadmin.html">
+                      <i class="bi bi-envelope"></i>
+                      	Funcionários
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="funeraisgestor.html">
+                      <i class="bi bi-file-earmark"></i>
+                      	Funerais
+                    </a>
+                  </li>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link text-light" href="sepulturaadmin.html">
+					<i class="bi bi-file-earmark"></i>
+						Sepulturas
+				  </a>
+				</li>
+        <li class="nav-item">
+				  <a class="nav-link text-light" href="notificacaoadmin.html">
+					<i class="bi bi-file-earmark"></i>
+						Notificacões
+				  </a>
+				</li>
+                </ul>
+                <div class="mt-4">
+                  <div class="sair">
+                    <a class="btn" href="index.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Sair</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+    
+          <main class=" col-lg-10">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+              <div class="admin">
+                <h1 class="">Administrador </h1>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-title" href="responsaveladmin.html">Responsáveis</div>
+              <div class="card-content"><p id="usuarios">0</p></div>
+          </div>
+          <div class="card">
+              <div class="card-title"   href="funcionariosadmin.html">Funcionários</div>
+              <div class="card-content"><p id="funcionarios">0</p></div>
+          </div>
+          <div class="card">
+              <div class="card-title"  href="funeraisgestor.html">Funerais</div>
+              <div class="card-content">
+                <p id="funerais">0</p>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-title" href="sepulturaadmin.html">Sepulturas</div>
+              <div class="card-content"><p id="sepulturas">0</p></div>
+          </div>
+          
+          
+      <script src="font-icone/js/all.min.js"></script>
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="api/homeAdmin.js"></script>
+</body>
+</html>

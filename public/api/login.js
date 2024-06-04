@@ -83,13 +83,11 @@ document.getElementById('entrar').addEventListener("click", function () {
                 if(data.usuarioTipo==0){
                     window.location.href = "admin.html";
                 }else if(data.usuarioTipo==1){
-                    window.location.href = "pages/home.html";
-                    alert('tela do funcionario')
+                    window.location.href = "pages/funcionario.html";
                 }else if(data.usuarioTipo==2){
                     window.location.href = "home.html";
                 }
-
-               
+  
             } else {
                 alert('Credenciais inválidas'); // Mensagem de erro
             }
