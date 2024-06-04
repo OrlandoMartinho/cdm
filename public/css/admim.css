@@ -91,6 +91,11 @@ position: absolute;
 top: 7rem;
 }
 
+.card-content p{
+  margin-left: 70vw;
+  
+}
+
 p{
 margin-top: -6rem;
 margin-left:60rem;
