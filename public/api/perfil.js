@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data) {
                     let telefone=data.telefone;
+                    console.log(data.telefone)
                     if(data.telefone==null){
                         telefone = '00000000'
                     }
