@@ -4,7 +4,7 @@ const funcionariosController = require('../controllers/FuncionariosControllers')
 
 router.post('/cadastrar', funcionariosController.cadastrarFuncionarios);
 
-router.post('/todos_funcionarios',funcionariosController.obterFuncionarioPorID)
+router.post('/todos_funcionarios',funcionariosController.obterTodosFuncionarios)
 
 router.put('/',funcionariosController.editarFuncionario)
 

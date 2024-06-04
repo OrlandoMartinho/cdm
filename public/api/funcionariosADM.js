@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     };
     
-    fetch(`${base_url}funerais/todos_funerais_do_usuario`, requestOptions2)
+    fetch(`${base_url}funcionarios/todos_funcionarios`, requestOptions2)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro ao fazer a requisição: ' + response.status);
@@ -83,10 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(data => {
             console.log(data)
-            data.funerais.forEach(dado => {
+            data.funcionarios.forEach(dado => {
                 // Criar uma nova linha
                 const novaLinha = document.createElement('tr');
-        if(dado.agendado==1){
+       
             novaLinha.innerHTML = `
             <td>${dado.nome_completo}</td>
             <td>${dado.filiacao}</td>
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Adicionar a nova linha ao <tbody>
         tbody.appendChild(novaLinha);
-        }
+       
                 // Criar células para cada valor e adicioná-las à nova linha
                
             });
@@ -108,3 +108,5 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Erro:', error);
         });
 });
+
+

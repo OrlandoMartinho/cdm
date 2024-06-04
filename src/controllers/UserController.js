@@ -162,6 +162,22 @@ const UsersController = {
         const selectQuery = 'SELECT * FROM usuarios WHERE token = ?';
         const [usuario] =await dbPromise.query(selectQuery, [accessToken]) 
         return  res.status(200).json({ usuario:usuario[0] });   
+    },
+    obterDashboard: async (req, res) => {
+        const { accessToken } = req.body;
+        console.log(await token.verificarTokenUsuario(accessToken))
+        if (!accessToken || ! await (token.verificarTokenUsuario(accessToken))||token.usuarioTipo(accessToken)==2 ) {
+            return res.status(401).json({ mensagem: 'Token inválido' });
+        }
+        const selectQuery = 'SELECT * FROM usuarios where tipo = 2';
+        const selectQueryFuncionarios = 'SELECT * FROM usuarios where tipo = 1';
+        const selectQueryFunerais ='SELECT * FROM funerais'
+        const selectQuerySepulturas = 'SELECT * FROM sepulturas';
+        const [usuario] =await dbPromise.query(selectQuery) 
+        const [funcionarios] =await dbPromise.query(selectQueryFuncionarios) 
+        const [funerais] =await dbPromise.query(selectQueryFunerais) 
+        const [sepulturas] =await dbPromise.query(selectQuerySepulturas) 
+        return  res.status(200).json({ usuarios:usuario,funcionarios:funcionarios,funerais:funerais,sepulturas:sepulturas });   
     }
 }
 

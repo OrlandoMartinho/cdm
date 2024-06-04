@@ -6,7 +6,7 @@ router.post('/cadastrar', UsersController.cadastrarUsuario);
 
 router.post('/login', UsersController.autenticarUsuario);
 
-router.post('/todos_usuarios',UsersController.obterTodosUsuarios)
+router.post('/listar',UsersController.obterTodosUsuarios)
 
 router.put('/',UsersController.editarUsuario)
 
@@ -14,4 +14,6 @@ router.delete('/',UsersController.eliminarUsuario)
 
 router.post('/obter_usuario_por_token', UsersController.obterUsuarioPorAccessToken);
 
+
+router.post('/dashboard',UsersController.obterDashboard)
 module.exports = router;

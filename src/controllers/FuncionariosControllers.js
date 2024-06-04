@@ -6,10 +6,11 @@ const saltRounds = 10;
 const salt = bcrypt.genSaltSync(saltRounds);
 
 const UsersController = {
+    
     cadastrarFuncionarios: async (req, res) => {
-        const {senha, email, data_de_ingresso,cargo,nome, genero,data_de_nascimento,accessToken  } = req.body;
+        const {telefone,numero_do_bi,senha, email, data_de_ingresso,cargo,nome, genero,data_de_nascimento,morada,accessToken  } = req.body;
         // Verificar se todos os campos obrigatórios estão presentes
-        if (!senha||!nome || !genero || !email || !data_de_nascimento ||!data_de_ingresso||!cargo||!accessToken) {
+        if (!telefone||!numero_do_bi||!senha||!email||!data_de_ingresso||!cargo||!nome||!genero||!data_de_nascimento||!morada||!accessToken) {
             return res.status(400).json({ Mensagem: "Campos incompletos" });
         }
 
@@ -24,10 +25,15 @@ const UsersController = {
          if(usersResults.length>0){
             return res.status(403).json({Mensagem:"Funcionário já está cadastrado"}) 
         }
-        const senhaEncriptada = await bcrypt.hashSync(senha, salt);
-        const createQuery = "INSERT INTO usuarios (senha,tipo,email, data_de_ingresso,cargo,nome, genero,data_de_nascimento) VALUES (?, ?, ?, ?, ?,?)";                
-        const [insetUser]=await  dbPromise.query(createQuery,[senhaEncriptada,2,email, data_de_ingresso,cargo,nome, genero,data_de_nascimento])                              
-        return res.status(201).json({ Mensagem: "Funcionario cadastrado com sucesso",id_funcionario:insetUser.insertId});
+        try {
+        const senhaEncriptada = await bcrypt.hashSync(senha+'', salt);
+        const createQuery = "INSERT INTO usuarios (telefone,numero_do_bi,senha, email, data_de_ingresso,cargo,nome, genero,data_de_nascimento,morada,tipo) VALUES (?,?,?,?,?,?,?,?,?,?,1)";                
+        const [insetUser]=await  dbPromise.query(createQuery,[telefone,numero_do_bi,senhaEncriptada, email, data_de_ingresso,cargo,nome, genero,data_de_nascimento,morada])                              
+        return res.status(200).json({ Mensagem: "Funcionario cadastrado com sucesso",id_funcionario:insetUser.insertId});
+    } catch (err) {
+        console.error('Erro ao eliminar usuário:', err);
+        return res.status(500).json({ mensagem: 'Erro interno do servidor ao eliminar usuário' });
+     }
     },
     editarFuncionario:async(req,res)=>{
 
