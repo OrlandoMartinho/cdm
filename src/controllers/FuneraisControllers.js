@@ -140,11 +140,11 @@ const funeralController = {
     adiarFuneral: async (req, res) => {
         try {
             const { accessToken,id_funeral ,data_de_sepultamento} = req.body;
-            if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=1){
+            if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=2){
                 return res.status(401).json({ Mensagem: "Campos incompletos" });
             }
 
-            const rupe = gerarCodigoDeVerificacao;
+            const rupe = gerarCodigoDeVerificacao();
             const deleteUsuarioQuery = 'UPDATE funerais SET adiar = 0,rupe = ?,data_de_sepultamento = ? WHERE id_funeral = ?';
             const deleteResults=await dbPromise.query(deleteUsuarioQuery, [rupe,data_de_sepultamento,id_funeral]) 
             const [funerais]=await dbPromise.query('SELECT * FROM funerais where id_funeral = ?', [id_funeral])

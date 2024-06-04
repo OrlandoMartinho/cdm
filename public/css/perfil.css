@@ -13,7 +13,19 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
-
+.genero{
+  display: flex;
+  gap:1rem;
+  position: relative;
+  top: 2rem;
+  padding: 1rem;
+  margin-right: 2rem;
+}
+.input_generos input{
+  display: flex;
+  
+  
+  }
 /* Estilo do botão Salvar */
 button[type="submit"] {
   width: 100%;

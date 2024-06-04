@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <a href="../CED CEM/home.html"><img src="assets/img/logo.png" alt=""></a>
+        <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
         <nav>
             <a href="index.html">Voltar</a>
         </nav>
@@ -38,7 +38,7 @@
                 <a href="funeraisAgendados.html">Funerais Agendados</a>
             </div>
             <div class="unique-conteudo-modal">
-                <a href="home.html">Sair</a>
+                <a href="home.html" onclick="sair()">Sair</a>
             </div>
         </div>
     </div>
@@ -86,6 +86,26 @@
                                         <label for="email">E-mail</label>
                                         <input type="email" class="form-control" id="email">
                                     </div>
+
+                                    <div class="input-radio">
+                                        <div></div>
+                                        <div class="genero">
+                                            <p>Gênero</p> 
+                                            <label for="F">Femenino</label>
+                                            <div class="input_generos">
+                                                <input type="radio" name="genero" id="F" value="F">
+                                            </div>
+                                            <label for="M">Masculino</label>
+                                            <div class="input_generos">
+                                                <input type="radio" name="genero" id="M" value="M" checked>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-control">
+                                        <i class="fa-solid fa-location-dot me-2 mb-3"></i> 
+                                        <input type="text" class="mb-3" placeholder="Morada" name="house" id="house" required>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="telemovel">Telemóvel</label>
                                         <input type="text" class="form-control" id="telemovel">
@@ -98,7 +118,7 @@
                                         <label for="senhaNova">Senha nova</label>
                                         <input type="password" class="form-control" id="senhaNova">
                                     </div>
-                                    <input type="submit" value="Salvar">
+                                    <input type="submit" value="Salvar" id="salvar">
                                 </div>
                             </div>
                         </div>
@@ -116,11 +136,19 @@
                         <div class="form-group">
                             <label id="dataDeNascimentoAtual">12/12/2000</label>
                         </div>
+
+
                         <div class="form-group">
                             <label for="email">Email</label>
                         </div>
                         <div class="form-group">
                             <label id="emailAtual">joaojose@gmail.com</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Telefone</label>
+                        </div>
+                        <div class="form-group">
+                            <label id="telAtual">joaojose@gmail.com</label>
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha</label>
@@ -144,5 +172,10 @@
     <script src="js/perfilnotificacoes.js"></script>
     <script src="js/menuperfil.js"></script>
     <script src="api/perfil.js"></script>
+    <script>
+        function sair(){
+          localStorage.setItem('token',' ')
+        }
+      </script>
 </body>
 </html>

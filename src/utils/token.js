@@ -30,6 +30,7 @@ const token = {
     usuarioEmail: (accessToken) => {
         try {
             const decodedToken = jwt.verify(accessToken, secretKey.secretKey)
+            console.log(decodedToken)
             if (decodedToken) {
                 return decodedToken.usuarioEmail;
             } else {
@@ -57,13 +58,14 @@ const token = {
     verificarTokenUsuario: (accessToken) => {
         return new Promise((resolve, reject) => {
             const id_usuario = token.usuarioEmail(accessToken);
-            console.log(id_usuario)
+            
             const query = 'SELECT token FROM usuarios WHERE email = ?';
             db.query(query, [id_usuario], (err, result) => {
                 if (err) {
                     console.error('Erro ao buscar token do usuário:', err);
                     reject(err);
                 } else {
+                   
                     if (result.length === 0) {
                         resolve(false);
                     } else {

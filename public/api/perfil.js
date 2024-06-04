@@ -1,3 +1,28 @@
+function cadastrarNaApi(dados) {
+    const requestOptions = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+    };
+
+    return fetch(`${base_url}usuarios/`, requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao fazer a requisição: ' + response.status);
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            throw error; // Propagar o erro para ser tratado pelo código que chama esta função
+        });
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Função para fazer a requisição para obter as notificações
     function obterNotificacoes() {
@@ -66,11 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
         fazerObterUsuario(token)
             .then(data => {
                 if (data) {
+                    let telefone=data.telefone;
+                    if(data.telefone==null){
+                        telefone = '00000000'
+                    }
                     const data2=data.usuario
                     // Atualizar os dados do usuário no perfil
                     document.getElementById('nomeAtual').innerText = data2.nome;
                     document.getElementById('dataDeNascimentoAtual').innerText = new Date(data2.data_de_nascimento).toLocaleDateString('pt-BR');
                     document.getElementById('emailAtual').innerText = data2.email;
+                    document.getElementById('telAtual').innerText =telefone
                 } else {
                     console.error('Erro ao obter os dados do usuário');
                 }
@@ -93,9 +123,56 @@ document.addEventListener('DOMContentLoaded', () => {
         notificationContent.appendChild(notification);
     };
 
-    // Chamar as funções para obter notificações e dados do usuário ao carregar a página
+  
     obterNotificacoes();
     obterUsuario();
 
-    // Restante do seu código...
+    
 });
+
+document.getElementById('salvar').addEventListener('click',()=>{
+
+
+    const name = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const genero = document.querySelector('input[name="genero"]:checked').value;
+    const house = document.getElementById('house').value;
+    const date = document.getElementById('dataDeNascimento').value;
+    const password = document.getElementById('senhaAntiga').value;
+    const confirmPassword = document.getElementById('senhaNova').value;
+    const telefone = document.getElementById('telemovel').value;
+
+    if (!name || !password || !genero || !email || !date || !house||!telefone||password!=localStorage.getItem('senha')) {
+        alert('Verifique os dados informados');
+    } else {
+        const dadosUser = {
+            email: email,
+            morada: house,
+            nome: name,
+            senha: confirmPassword,
+            genero: genero,
+            data_de_nascimento: date,
+            telefone:telefone,
+            accessToken:localStorage.getItem('token')
+        };
+
+        cadastrarNaApi(dadosUser)
+            .then(data => {
+                console.log(data);
+                localStorage.setItem('token',data.novo_token)
+                alert(" feito com sucesso");
+                // Redirecionar para outra página, se necessário
+                location.reload()
+            })
+            .catch(error => {
+                if (error.message.includes('409')) {
+                    location.reload()
+                } else {
+                    alert("Erro ao cadastrar usuário");
+                }
+                console.error("Erro ao fazer a requisição", error);
+            });
+    }
+
+
+})

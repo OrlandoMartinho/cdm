@@ -15,9 +15,9 @@
 
 <body>
     <header>
-        <a href="../CED CEM/home.html"><img src="assets/img/logo.png" alt=""></a>
+        <a href="home.html"><img src="assets/img/logo.png" alt=""></a>
         <nav>
-            <a href="../CED CEM/home.html">Início</a>
+            <a href="home.html">Início</a>
             <a href="#quem-somos">Quem somos</a>
             <a href="#servicos">Serviços</a>
             <a href="#contato">Contato</a>
@@ -38,7 +38,7 @@
           <div class="unique-conteudo-modal">
             <a href="funeraisAgendados.html">Funerais agendados</a>
         </div>
-          <a href="index.html">Sair</a>
+          <a href="index.html" onclick="sair()">Sair</a>
         </div>
       </div>
      <!-- Modal notificacoes -->
@@ -224,5 +224,10 @@
     <script src="js/homenotificacoes.js"></script>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
     <script src="api/contatos.js"></script>
+    <script>
+      function sair(){
+        localStorage.setItem('token',' ')
+      }
+    </script>
 </body>
 </html>

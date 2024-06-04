@@ -6,57 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CED_CEM</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/entQ.css">
+    <link rel="stylesheet" href="css/funeraisregistrados.css">
     <link rel="stylesheet" href="font-icone/css/all.min.css">
+    <script src="api/autenticacaoUser.js"></script>
 </head>
 <body>
     <header>
-        <a href="../CED CEM/home.html"><img src="../CED CEM/assets/img/logo.png" alt=""></a>
-        <nav>
-            <a href="../CED CEM/home.html">Início</a>
-            <a href="../CED CEM/home.html">Quem somos</a>
-            <a href="../CED CEM/home.html">Serviços</a>
-            <a href="../CED CEM/home.html">Contato</a>
-        </nav>
-        <div class="control-menu">
-            <button class="btn-menu" id="openUniqueModal"><i class="fa-solid fa-bars"></i></button>
-            <button class="btn-notif" id="opennotificacoes-modal" ><i class="fa-solid fa-bell"></i></button>
-            <a href="perfil.html"  class="btn-user"><i class="fa fa-user-circle"></i></a>
-        </div>
+        <a href="../index.html"><img src="../assets/img/logo.png" alt=""></a>
     </header>
     <div class="container my-5">
-      <h2 class="text-center">Meus Entes Queridos</h2>
+      <h2 class="text-center">Funerais Autorizados</h2>
       <div class="row">
-        <a href="#" id="openModal">Ver</a>
+        <div class="iconer-voltar">
+          <a href="home.html"><i class="fa fa-arrow-left"></i></a>  
+        </div>
+		
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
           <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
       </div>
           <div class="col-md-12">
-              <table class="table table-bordered mt-4">
-                  <thead class="table color_tabela">
-                      <tr>
-                          <th>Nome Completo</th>
-                          <th>Filiação</th>
-                          <th>Causa da morte</th>
-                          <th>Falecimento</th>
-                          <th>Sepultamento</th>
-                          <th>Localização</th>
-                          <th>Ação</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>Leandro Furtado Tubias</td>
-                          <td>João Tubias - Maria Furtado</td>
-                          <td>Tuberculose</td>
-                          <td>10-12-1999</td>
-                          <td>13-12-1999</td>
-                          <td>Cemitério Benfica - Quadra: 17 - Lote: 144</td>
-                          <td><a href="#" class="btn modal-entrar">Legalizar</a></td>
-                      </tr>
-                  </tbody>
-              </table>
+            <table class="table table-bordered">
+              <thead class="">
+                <tr>
+                  <th>Nome Completo</th>
+                  <th>Filiação</th>
+                  <th>Causa da morte</th>
+                  <th>Falecimento</th>
+                  <th>Sepultamento</th>
+                  <th>Localização</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Adicione mais linhas conforme necessário -->
+              </tbody>
+            </table>
           </div>
       </div>
   </div>
@@ -64,63 +49,16 @@
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
+      <a href="#">Crianças</a>
+      <a href="#">Jovens</a>
+      <a href="#">Adultos</a>
       <a href="#">Legalizados</a>
-      <a href="#">Não legalizados</a>
-    </div>
-  </div>
-  <!-- Modal menu -->
-  <div id="unique-modal" class="unique-modal">
-    <div class="unique-modal-content">
-      <span class="unique-close">&times;</span>
-      <p>Menu</p>
-      <div class="unique-conteudo-modal">
-        <a href="../CED CEM/entQ.html">Meu antes queridos</a>
-        </div>
-        <div class="unique-conteudo-modal">
-            <a href="cadastrarfalecido.html">Registar Funeral</a>
-        </div>
-        <div class="unique-conteudo-modal">
-            <a href="funeraisagendade.html">Funeral agendado</a>
-        </div>
-
-        <div class="unique-conteudo-modal">
-            <a href="home.html">Sair</a>
-        </div>
-    </div>
-  </div>
- <!-- Modal notificacoes -->
-  <div id="notificacoes-modal" class="notificacoes-modal">
-    <div class="notificacoes-modal-content">
-      <span class="notificacoes-close">&times;</span>
-      <p>Notificações</p>
-      <div class="notificacoes-icones">
-        <i class="fa fa-refresh" aria-hidden="true"></i>
-      </div>
-      <div class="notificacoes-icones">
-        <i class="	fa fa-trash" aria-hidden="true"></i>
-      </div>
-      <div class="notificacoes-conteudo-modal">
-        <p>O funeral de Alberto Wia realizado no 
-          dia 16-05-2024, pela 10:00 na quadra 12,
-          lote 2 Precisa ser legalizado, no prazo de 5 anos.</p>
-      </div>
-      <div class="notificacoes-hora">
-        <span>Maio 13, 2024 08H40 Segunda-feira</span>
-      </div>
-      <div class="notificacoes-conteudo-modal">
-        <p>O funeral de Alberto Wia realizado no 
-          dia 16-05-2024, pela 10:00 na quadra 12,
-          lote 2 Precisa ser legalizado, no prazo de 5 anos.</p>
-      </div>
-      <div class="notificacoes-hora">
-        <span>Maio 13, 2024 08H40 Segunda-feira</span>
-      </div>
+      <a href="#">Não lecalizados</a>
     </div>
   </div>
 <script src="font-icone/js/all.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="js/legalizar.js"></script>
-<script src="js/entqmenu.js"></script>
-<script src="js/notificacoes.js"></script>
+<script src="js/funeraisregistrados.js"></script>
+<script src="api/funeraisAutorizados.js"></script>
 </body>
 </html>

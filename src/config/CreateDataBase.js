@@ -107,6 +107,7 @@ connection.connect(async (err) => {
           token TEXT DEFAULT NULL,
           tipo INT DEFAULT NULL,
           numero_do_bi VARCHAR(45) DEFAULT null,
+          telefone VARCHAR(255) DEFAULT null,
           responsavel VARCHAR(255) DEFAULT null,
           data_de_ingresso DATE DEFAULT null,
           cargo VARCHAR(45) DEFAULT NULL
@@ -131,16 +132,17 @@ connection.connect(async (err) => {
           data_de_falecimento DATE DEFAULT null,
           data_de_nascimento DATE DEFAULT null,
           localizacao VARCHAR(255) DEFAULT null,
+          
           data_de_sepultamento DATE DEFAULT null,
           legalizado INT DEFAULT 0,
           adiar INT DEFAULT NULL,
           agendado  INT DEFAULT 0,
           nacionalidade VARCHAR(255) DEFAULT null,
           numero_do_acento_do_obito VARCHAR(45) DEFAULT null,
-          parentesco VARCHAR(255) DEFAULT null,
+          parentesco VARCHAR(255) DEFAULT null, 
           genero VARCHAR(255) DEFAULT null,
           id_sepultura INT DEFAULT null,
-          rupe TEXT DEFAULT null
+          rupe TEXT DEFAULT null 
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;`,
     
       `CREATE TABLE IF NOT EXISTS sepulturas (

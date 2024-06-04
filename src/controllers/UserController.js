@@ -87,14 +87,14 @@ const UsersController = {
     },
     editarUsuario:async(req,res)=>{
 
-        const { accessToken,email, morada,nome, senha, genero,data_de_nascimento } = req.body;
-    
+        const { accessToken,email,telefone, morada,nome, senha, genero,data_de_nascimento } = req.body;
+        console.log(accessToken)
         const tokenValido = await token.verificarTokenUsuario(accessToken);
         if (!tokenValido) {
             return res.status(401).json({ mensagem: 'Token inválido' });
         }
   
-        if (!nome || !senha || !genero || !email || !data_de_nascimento||!morada) {
+        if (!nome || !senha || !genero || !email || !data_de_nascimento||!morada||!telefone) {
             return res.status(400).json({ Mensagem: "Campos incompletos" });
         }
 
@@ -103,10 +103,10 @@ const UsersController = {
             const id_usuario=token.usuarioId(accessToken)
             const senhaEncriptada = await bcrypt.hashSync(senha, salt);
                         // Inserir o novo usuário na tabela `usuarios`
-            const updateQuery1 = 'UPDATE usuarios SET nome=?, senha=?, genero=?, email=?, data_de_nascimento=?,morada = ? WHERE id_usuario = ?';
-            await dbPromise.query(updateQuery1,[nome,senhaEncriptada, genero, email,data_de_nascimento,morada,id_usuario])
+            const updateQuery1 = 'UPDATE usuarios SET nome=?, senha=?, genero=?, email=?, data_de_nascimento=?,morada = ?,telefone = ? WHERE id_usuario = ?';
+            await dbPromise.query(updateQuery1,[nome,senhaEncriptada, genero, email,data_de_nascimento,morada,telefone,id_usuario])
                 
-            const accessToken2 = jwt.sign({ id_usuario: token.usuarioId(accessToken),usuarioEmail:email,senha:token.usuarioSenha(accessToken),usuarioTipo:1}, secretKey.secretKey);
+            const accessToken2 = jwt.sign({ id_usuario: token.usuarioId(accessToken),usuarioEmail:email,senha:token.usuarioSenha(accessToken),usuarioTipo:2}, secretKey.secretKey);
                                     
             const updateQuery = 'UPDATE usuarios SET token = ? WHERE id_usuario = ?';
                 

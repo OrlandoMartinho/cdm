@@ -78,6 +78,7 @@ document.getElementById('entrar').addEventListener("click", function () {
             console.log(data)
             if (data) {
                 alert('Login bem-sucedido!');
+                localStorage.setItem('senha',senha)
                 localStorage.setItem("token",data.accessToken)
                 if(data.usuarioTipo==0){
                     window.location.href = "admin.html";
