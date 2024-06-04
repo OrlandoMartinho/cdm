@@ -139,7 +139,9 @@ th{
     font-size: 1.9rem;
     cursor: pointer;
   }
-    
+  thead{
+    background: #415b67 !important;
+  }
   .modal a{
     text-decoration: none;
     margin: 0.5rem;

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/cadastrarfalecido.css">
     <link rel="stylesheet" href="font-icone/css/all.min.css">
+    <script src="api/autenticacaoUser.js"></script>
 </head>
 <body>
     <div class="container">
@@ -26,62 +27,59 @@
                         </div>
                         <div class="d-flex justify-content-between mt-2">
                             <div class="dados-falecido">
-                            <span>Dados</span>
-                            <span>Gerar RUPE</span>
-                            <span>Confirmar</span> 
+                                <span>Dados</span>
+                                <span>Gerar RUPE</span>
+                                <span>Confirmar</span> 
                             </div>
                         </div>
                     </div>
-                        </div>
-                    <div>
+                    <div class="form-group">
+                        <label for="nomeResponsavel">Nome completo</label>
+                        <input type="text" class="form-control" id="nomeResponsavel">
                     </div>
-                        <div class="form-group">
-                            <label for="nomeResponsavel">Nome completo</label>
-                            <input type="text" class="form-control" id="nomeResponsavel">
-                        </div>
 
-                        <div class="form-group">
-                            <label for="obito">Nº do assento de óbito</label>
-                            <input type="text" class="form-control" id="obito">
-                        </div>
-                        <div class="form-group">
-                            <label for="Filiacao">Filiação</label>
-                            <input type="text" class="form-control" id="Filiacao">
-                        </div>
-                        <div class="conteudo-genero">
-                            <label for="Genero">Gênero</label>
-                            <p>Femenino</p><input type="radio"> 
-                             <p>Masculino</p><input type="radio">
-                             <label for="Parentesco">Parentesco</label>
-                            <input type="text" class="form-control" id="parentesco">
-                        </div>
+                    <div class="form-group">
+                        <label for="obito">Nº do assento de óbito</label>
+                        <input type="text" class="form-control" id="obito">
+                    </div>
+                    <div class="form-group">
+                        <label for="Filiacao">Filiação</label>
+                        <input type="text" class="form-control" id="Filiacao">
+                    </div>
+                    <div class="conteudo-genero">
+                        <label for="Genero">Gênero</label>
+                        <p>Feminino</p><input value="feminino" type="radio" name="genero"> 
+                        <p>Masculino</p><input value="masculino" type="radio" name="genero">
+                        <label for="Parentesco">Parentesco</label>
+                        <input type="text" class="form-control" id="parentesco">
+                    </div>
+                    
+                    <div class="conteudo-genero">
+                        <label for="Genero">Nacionalidade</label>
+                        <p>Nacional</p><input value="nacional" type="radio" name="nacionalidade"> 
+                        <p>Estrangeiro</p><input value="estrangeiro" type="radio" name="nacionalidade">
+                    </div>
+                    <div class="form-group">
+                        <label for="datadenascimento">Data de nascimento</label>
+                        <input type="date" class="form-control" id="datadenascimento">
+                    </div>
 
-                        <div class="conteudo-genero">
-                            <label for="Genero">Nacionalidade</label>
-                            <p>Nacional</p><input type="radio"> 
-                             <p>Estrageiro</p><input type="radio">
-                        </div>
-                        <div class="form-group">
-                            <label for="datadenascimento">Data de nascimento</label>
-                            <input type="date" class="form-control" id="datadenascimento">
-                        </div>
+                    <div class="form-group">
+                        <label for="dataFalecimento">Data de Falecimento</label>
+                        <input type="date" class="form-control" id="dataFalecimento">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="dataFalecimento">Data de Falecimento</label>
-                            <input type="date" class="form-control" id="dataFalecimento">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="datadesepultamento">Data de sepultamento</label>
-                            <input type="date" class="form-control" id="datadesepultamento">
-                        </div>
-                        <div class="form-group">
-                            <label for="descriacao">Causa da Morte</label>
-                            <input type="text" class="form-control" id="descriacao">
-                        </div>
-                        
-                        <a  href="gerirrup.html" type="submit" class="btn_seguinte">Seguinte</a>
-                        <a  href="./home.html" type="submit" class="btn-cancelar">Cancelar</a>
+                    <div class="form-group">
+                        <label for="datadesepultamento">Data de sepultamento</label>
+                        <input type="date" class="form-control" id="datadesepultamento">
+                    </div>
+                    <div class="form-group">
+                        <label for="descriacao">Causa da Morte</label>
+                        <input type="text" class="form-control" id="descriacao">
+                    </div>
+                    
+                    <button id="avancar" class="btn_seguinte">Seguinte</button>
+                    <a href="./home.html" class="btn-cancelar">Cancelar</a>
                 </div>
             </div>
         </div>
@@ -89,4 +87,5 @@
 </body>
 <script src="font-icone/js/all.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="api/falecido_1.js"></script>
 </html>

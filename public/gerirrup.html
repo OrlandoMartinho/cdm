@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/gerirrup.css">
     <link rel="stylesheet" href="font-icone/css/all.min.css">
+    <script src="api/autenticacaoUser.js"></script>
 </head>
 <body>
     <div class="container">
@@ -33,28 +34,29 @@
                         </div>
                     </div>
                         </div>
-                    <form class="rup-controle">
+                    <div class="rup-controle">
                         <div class="form-group">
                             <label for="nomeCompleto">Insira Nome completo</label>
                             <input type="text" class="form-control" id="nomeCompleto">
                         </div>
                         <div class="form-group">
                             <label for="numeroBI">Insira número de BI</label>
-                            <input type="text" class="form-control" id="numeroBI">
+                            <input type="text" class="form-control" id="numeroBi">
                         </div>
                         <div class="form-group form-check mt-3">
                             <input type="checkbox" class="form-check-input" id="conscienciaValor">
                             <label class="form-check-label" for="conscienciaValor">Tenho consciência de que o Valor a pagar é 10000 KZ</label>
                         </div>
-                        <a href="confirmar.html" type="submit" class="btn_seguinte mt-3">Seguinte</a>
+                        <button href="" id="avancar" class="btn_seguinte mt-3">Seguinte</button>
                         <div class="btn-voltar">
-                            <a type="submit" class="btn_seguinte mt-3" href="cadastrarfalecido.html" id="btn_voltar">Voltar</a>
+                        <a href="cadastrarfalecido.html"><button type="submit" class="btn_seguinte mt-3" href="cadastrarfalecido.html" id="btn_voltar">Voltar</button></a>    
                         </div>
-                    </form>
+                    </div>
             </div>
         </div>
     </div>
 </body>
 <script src="font-icone/js/all.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="api/falecido_2.js"></script>
 </html>

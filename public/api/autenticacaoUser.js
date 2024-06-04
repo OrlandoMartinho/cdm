@@ -21,10 +21,12 @@ fetch(`${base_url}`, requestOptions)
         return response.json();
     })
     .then(data => {
+
         if (data.mensagem === false) {
             window.location.href = "../index.html";
         }
     })
     .catch(error => {
+        
         console.error('Erro:', error);
     });

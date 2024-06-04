@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/confirmar.css">
     <link rel="stylesheet" href="font-icone/css/all.min.css">
+    <script src="api/autenticacaoUser.js"></script>
 </head>
 <body>
     <div class="container">
@@ -35,14 +36,14 @@
                     </div>
                         <div class="rup_centro">
                         <h3>RUPE</h3>
-                        <p>09876543279876500000</p>
+                        <p id="rupe">09876543279876500000</p>
                         <div class="span_rup">
                         <span>OBS: Capture o seu RUPE. Por favor</span>
                         </div>
                         <div class="btn-button">
-                        <a type="submit" class="btn_seguinte mt-3" href="funeraisagendade.html" >Concluir</a>
+                        <a type="submit" class="btn_seguinte mt-3" href="funeraisAgendados.html" >Concluir</a>
                         </div>
-                        <div class="btn-voltar">
+                        <div class="btn-voltar" >
                             <a type="submit" class="btn_seguinte mt-3" href="gerirrup.html" id="btn_voltar">Voltar</a>
                         </div>
                 </div>
@@ -51,4 +52,5 @@
 </body>
 <script src="font-icone/js/all.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="api/confirmar.js"></script>
 </html>
