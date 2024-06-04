@@ -10,7 +10,7 @@ router.post('/todos_funerais_do_usuario',funeraisController.obterTodosFuneraisUs
 
 router.post('/adiar',funeraisController.adiarFuneral)
 
-router.post('/eliminar', funeraisController.eliminarFuneral);
+router.delete('/', funeraisController.eliminarFuneral);
 
 router.post('/legalizar', funeraisController.legalizarFuneral);
 

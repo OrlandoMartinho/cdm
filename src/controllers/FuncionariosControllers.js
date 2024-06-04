@@ -67,12 +67,13 @@ const UsersController = {
     },
     eliminarFuncionarios: async (req, res) => {
         try {
-            const { accessToken,id_funcionario } = req.body;
+            const { accessToken,id_usuario } = req.body;
             if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=0){
                 return res.status(401).json({ Mensagem: "Campos incompletos" });
             }
             const deleteUsuarioQuery = 'DELETE FROM usuarios WHERE id_usuario = ?';
-            const deleteResults=await dbPromise.query(deleteUsuarioQuery, [id_funcionario]) 
+            const deleteResults=await dbPromise.query(deleteUsuarioQuery, [id_usuario]) 
+            console.log(id_usuario)
             return  res.status(200).json({ mensagem: 'funcionario eliminado com sucesso' });
         } catch (err) {
            console.error('Erro ao eliminar usuário:', err);

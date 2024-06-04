@@ -74,18 +74,27 @@ const funeralController = {
     },
     eliminarFuneral: async (req, res) => {
         try {
-            const { accessToken,id_funeral } = req.body;
-            if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=0){
-                return res.status(401).json({ Mensagem: "Campos incompletos" });
+            const { accessToken, id_funeral } = req.body;
+        
+            if (!await token.verificarTokenUsuario(accessToken) || token.usuarioTipo(accessToken) != 0) {
+                return res.status(401).json({ mensagem: "Campos incompletos ou acesso não autorizado" });
             }
+        
+            const [funerais] = await dbPromise.query('SELECT * FROM funerais WHERE id_funeral = ?', [id_funeral]);
+        
+            if (funerais.length === 0) {
+                return res.status(404).json({ mensagem: "Funeral não encontrado" });
+            }
+        
+            notify.addNotificacao("O seu funeral foi cancelado", funerais[0].id_usuario);
+        
             const deleteUsuarioQuery = 'DELETE FROM funerais WHERE id_funeral = ?';
-            const deleteResults=await dbPromise.query(deleteUsuarioQuery, [id_funeral]) 
-            const [funerais]=await dbPromise.query('SELECT * FROM funerais where id_funeral = ?', [id_funeral])
-            notify.addNotificacao("O seu funeral foi cancelado ",funerais[0].id_usuario) 
-            return  res.status(200).json({ mensagem: 'Funeral eliminado com sucesso' });
+            await dbPromise.query(deleteUsuarioQuery, [id_funeral]);
+        
+            return res.status(200).json({ mensagem: 'Funeral eliminado com sucesso' });
         } catch (err) {
-           console.error('Erro ao eliminar usuário:', err);
-           return res.status(500).json({ mensagem: 'Erro interno do servidor ao eliminar usuário' });
+            console.error('Erro ao eliminar funeral:', err);
+            return res.status(500).json({ mensagem: 'Erro interno do servidor ao eliminar funeral' });
         }
     },
     confirmarFuneral: async (req, res) => {
