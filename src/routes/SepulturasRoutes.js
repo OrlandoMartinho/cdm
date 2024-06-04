@@ -4,7 +4,7 @@ const sepulturasController = require('../controllers/SepulturasControllers');
 
 router.post('/cadastrar', sepulturasController.cadastrarSepulturas);
 
-router.post('/todos_sepulturas',sepulturasController.obterTodasSepulturas)
+router.post('/todas_sepulturas',sepulturasController.obterTodasSepulturas)
 
 router.post('/obter_sepultura_por_id', sepulturasController.obterSepulturaPorID);
 

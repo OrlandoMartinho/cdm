@@ -30,7 +30,7 @@ const UsersController = {
         }
         const selectQuery2 = "SELECT * FROM sepulturas";
         const [usersResults] =await dbPromise.query(selectQuery2)       
-        return res.status(200).json({funcionarios:usersResults})
+        return res.status(200).json({sepulturas:usersResults})
     },
     obterSepulturaPorID: async (req, res) => {
         try {

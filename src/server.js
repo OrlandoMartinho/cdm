@@ -59,27 +59,6 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/pesquisar', async (req, res) => {
-  const { accessToken, tableName, keyValue } = req.body;
-
-  if (!accessToken) {
-      return res.status(400).json({ mensagem: "Token não fornecido" });
-  }
-
-  // Verificação do token de acesso
-  if (!await token.verificarTokenUsuario(accessToken) || token.usuarioTipo(accessToken) != 0) {
-      return res.status(401).json({ mensagem: "Campos incompletos ou acesso não autorizado" });
-  }
-
-  try {
-      const selectQuery = `SELECT * FROM ?? WHERE id LIKE ?`;
-      const [results] = await dbPromise.query(selectQuery, [tableName, `%${keyValue}%`]);
-      return res.status(200).json({ resultado: results });
-  } catch (error) {
-      console.error(error);
-      return res.status(500).json({ mensagem: "Erro ao realizar a pesquisa" });
-  }
-});
 
 // Inicializando o servidor
 app.listen(PORT,HOST,() => {

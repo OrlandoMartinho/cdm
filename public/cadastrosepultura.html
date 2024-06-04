@@ -18,29 +18,44 @@
                 <a href="#"><img src="assets/img/logo.png" alt="" class="text-center"></a></h3>
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active text-light" href="admin.html" >Dashboard</a>
+                    <a class="nav-link active text-light" href="#"  id="active" >Dashboard</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-light" href="cadastrafuncionarios.html">
+                    <a class="nav-link text-light" href="responsaveladmin.html">
                       <i class="bi bi-person-plus"></i>
-                      Cadastrar funcionários
-                    </a>
+						Responsáveis
+					</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-light" href="mensagem.html">
+                    <a class="nav-link text-light" href="funcionariosadmin.html">
                       <i class="bi bi-envelope"></i>
-                      Mensagens
+                      	Funcionários
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-light" href="sepultura.html" id="active">
+                    <a class="nav-link text-light" href="funeraisgestor.html">
                       <i class="bi bi-file-earmark"></i>
-                      Sepulturas
+                      	Funerais
                     </a>
                   </li>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link text-light" href="sepulturaadmin.html">
+					<i class="bi bi-file-earmark"></i>
+						Sepulturas
+				  </a>
+				</li>
+        <li class="nav-item">
+				  <a class="nav-link text-light" href="notificacaoadmin.html">
+					<i class="bi bi-file-earmark"></i>
+						Notificacões
+				  </a>
+				</li>
                 </ul>
                 <div class="mt-4">
-                  <a class="btn btn-outline-light w-100" href="index.html">Sair</a>
+                  <div class="sair">
+                    <a class="btn" href="index.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Sair</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -51,7 +66,7 @@
               <h1 class="h2">Admin Aderson Cangahi</h1>
             </div>
             <div class="main-content">
-                <form>
+                <div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -92,14 +107,15 @@
                         </select>
                     </div>
                     <div class="form-buttons">
-                        <button type="submit" class="btn btn-dark">Cadastrar</button>
+                        <button type="submit" id="cadastrar" class="btn btn-dark">Cadastrar</button>
                     </div>
-                </form>
+                  </div>
             </div>
           </main>
         </div>
       </div>
       <script src="font-icone/js/all.min.js"></script>
     <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="api/cadastrarSepultura.js"></script>
 </body>
 </html>
