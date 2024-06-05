@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data.funerais.forEach(dado => {
                 // Criar uma nova linha
                 const novaLinha = document.createElement('tr');
-                if (dado.agendado == 0) {
+                if (dado.adiar == 0) {
                     novaLinha.innerHTML = `
                         <td>${dado.nome_completo}</td>
                         <td>${dado.filiacao}</td>
