@@ -44,7 +44,7 @@ function adicionarLinhasTabela() {
                     // Salva o ID do contato no armazenamento local
                     localStorage.setItem('id_contato', dado.id_contato);
                     // Redireciona para outra página
-                    window.location.href = 'outra_pagina.html';
+                    window.location.href = 'mensagemlidas.html';
                 });
                 tbody.appendChild(novaLinha);
             });

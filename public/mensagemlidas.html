@@ -8,42 +8,59 @@
     <title>CED_CEM</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/mensagemlidas.css">
+    <script src="api/autenticacaoUser.js"></script>
 </head>
 <body>
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
         <div class="position-sticky">
-			<div class="sidebar-sticky pt-3">
-				<a href="#"><img src="assets/img/logo.png" alt="" class="text-center"></a></h3>
-				<ul class="nav flex-column">
-				  <li class="nav-item">
-					<a class="nav-link active text-light" href="gestor.html">Dashboard</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link text-light" href="funeraisagendados.html">
-					  <i class="bi bi-person-plus"></i>
-						Funerais agentados
-					</a>
-				  </li>
-				<li class="nav-item">
-				  <a class="nav-link text-light" href="legal_agendada.html">
-					<i class="bi bi-file-earmark"></i>
-						Legalização agendada
-				  </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link text-light" id="active"  href="mensagem.html">
-					  <i class="bi bi-file-earmark"></i>
-						  Mensagens
-					</a>
-				  </li>
-				</ul>
-				<div class="mt-4">
-				  <div class="sair">
-					<a class="btn" href="index.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Sair</a>
-				  </div>
-				</div>
+          <div class="sidebar-sticky pt-3">
+            <a href="#"><img src="assets/img/logo.png" alt="" class="text-center"></a></h3>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link  text-light" href="funcionario.html"   >Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-light" href="mensagem.html" id="active">
+                  <i class="bi bi-person-plus"></i>
+                             Mensagens
+                        </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link text-light" href="funcionariosFuneralAgendado.html">
+                  <i class="bi bi-file-earmark"></i>
+                      Agendamento de Funerais
+                </a>
+              </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-light" href="legal_agendada.html">
+                <i class="bi bi-file-earmark"></i>
+                    Legalização de Funerais 
+              </a>
+            </li>
+
+    <li class="nav-item">
+              <a class="nav-link text-light" href="AdiarFuneral.html">
+                <i class="bi bi-file-earmark"></i>
+                    Adiamento de Funerais 
+              </a>
+            </li>
+    <li class="nav-item">
+              <a class="nav-link text-light" href="notificacoesFuncionarios.html">
+                <i class="bi bi-file-earmark"></i>
+                    Notificacões
+              </a>
+            </li>
+            </ul>
+            <div class="mt-4">
+              <div class="sair">
+                <a class="btn" href="index.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Sair</a>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     
@@ -51,7 +68,7 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                 <div class="d-flex align-items-center">
                   <div class="admin">
-                    <h1 class="">Funcionário Pedro Manuel</h1>
+                    <h1 class="">Funcionário</h1>
                   </div>
                 </div>
             </div>
@@ -63,15 +80,7 @@
               <i class="fa fa-trash" aria-hidden="true"></i>
             </div>
             <div class="message">
-                <div class="d-flex justify-content-between mensagem">
-                    <h4>Marisa Alberto João</h4>
-                    <span>Maio 12, 2024 7:45 segunda-feira</span>
-                </div>
-                <p><a href="mailto:marisajoao@gmail.com" class="ative">&lt;marisajoao@gmail.com&gt;</a></p>
-                <div class="email-body">
-                    <p>A segunda, 12/05/2024, 7:45, Marisa Alberto Joao &lt;<a href="mailto:marisajoao@gmail.com">marisajoao@gmail.com</a>&gt; escreveu:</p>
-                    <p>Gostaria de parabenizar a equipe do cemitério pelo excelente atendimento recebido durante a visita de ontem. Fui atendido por um funcionário gentil e prestativo que esclareceu todas as minhas dúvidas.</p>
-                </div>
+                
             </div>
         </main>
     </div>
@@ -82,5 +91,6 @@
       </div>
       <script src="font-icone/js/all.min.js"></script>
     <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="api/lerMensagem.js"></script>
 </body>
 </html>

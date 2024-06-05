@@ -22,7 +22,7 @@ const ContactosController = {
     listarContactos: async (req, res) => {
         const { accessToken } = req.body;
 
-        if (token.usuarioTipo(accessToken)!=1||!(await token.verificarTokenUsuario(accessToken))) {
+        if (token.usuarioTipo(accessToken)==2||!(await token.verificarTokenUsuario(accessToken))) {
             return res.status(401).json({ mensagem: 'Tokens inválidos' });
         }
 
@@ -35,7 +35,7 @@ const ContactosController = {
     obterContactoPorId: async (req, res) => {
         const { accessToken ,id_contato} = req.body;
 
-        if (token.usuarioTipo(accessToken)!=0||!(await token.verificarTokenUsuario(accessToken))) {
+        if (token.usuarioTipo(accessToken)==2||!(await token.verificarTokenUsuario(accessToken))) {
             return res.status(401).json({ mensagem: 'Tokens inválidos' });
         }
 
