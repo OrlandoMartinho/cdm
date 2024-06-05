@@ -86,7 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
             data.funerais.forEach(dado => {
                 // Criar uma nova linha
                 const novaLinha = document.createElement('tr');
-        if(dado.agendado==1){
+        if(dado.legalizado==2){
+            novaLinha.innerHTML = `
+            <td>${dado.nome_completo}</td>
+            <td>${dado.filiacao}</td>
+            <td>${dado.causa_da_morte}</td>
+            <td>${formatarData(dado.data_de_falecimento)}</td>
+            <td>${formatarData(dado.data_de_sepultamento)}</td>
+            <td>${dado.localizacao}</td>
+            <td>Legalizado</td>
+        `;
+        }else if(dado.legalizado==0){
             novaLinha.innerHTML = `
             <td>${dado.nome_completo}</td>
             <td>${dado.filiacao}</td>
@@ -96,10 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${dado.localizacao}</td>
             <td><button class="btn btn-link adia-funeral-btn" onclick="legalizarFuneral(${dado.id_funeral})">Legalizar Funeral</button></td>
         `;
-
+        }
+        else if(dado.legalizado==1){
+            novaLinha.innerHTML = `
+            <td>${dado.nome_completo}</td>
+            <td>${dado.filiacao}</td>
+            <td>${dado.causa_da_morte}</td>
+            <td>${formatarData(dado.data_de_falecimento)}</td>
+            <td>${formatarData(dado.data_de_sepultamento)}</td>
+            <td>${dado.localizacao}</td>
+            <td>Pedido de legalizacao</td>
+        `;
+        }
         // Adicionar a nova linha ao <tbody>
         tbody.appendChild(novaLinha);
-        }
+      
                 // Criar células para cada valor e adicioná-las à nova linha
                
             });

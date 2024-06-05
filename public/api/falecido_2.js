@@ -51,12 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data=>{
             console.log(data)
             localStorage.setItem('rupe',data.rupe_gerado)
+            
+            
+            
             alert("Funeral cadstrado com sucesso")
             window.location.href = "confirmar.html";
+            
         })
         .catch(error=>{
             console.log("Erro:",error)
             alert("Seputuras ocupadas ou verifica se o servidor está rodando")
+            window.location.href = "cadastrarfalecido.html";
         })
 
 
@@ -68,6 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adicionar um ouvinte de evento ao botão "Seguinte"
     document.getElementById('avancar').addEventListener('click', () => {
         // Chamar a função para obter e armazenar os valores
-        obterEArmazenarValores();
+        if (document.getElementById('conscienciaValor').checked) {
+            obterEArmazenarValores();
+            // Faça algo se a checkbox estiver selecionada
+        } else {
+            console.log('A checkbox não está selecionada.');
+            // Faça algo se a checkbox não estiver selecionada
+        }
+        
     });
 });
