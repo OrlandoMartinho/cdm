@@ -1,5 +1,6 @@
 const base_url = 'http://localhost:3000/';
 function isAdult(birthdate) {
+    
     const birthDate = new Date(birthdate);
     const today = new Date();
 
@@ -45,11 +46,11 @@ document.getElementById('cadastrar').addEventListener('click', () => {
 
     if (password !== confirmPassword || !name || !password || !genero || !email || !date || !house) {
         alert('Verifique os dados informados');
-    }else if(isAdult(date)){
+    }else if(!isAdult(date)){
 
         alert('Pessoas co menores de 18 anos não podem usar o site');
 
-    } else {
+    } else  {
         const dadosUser = {
             email: email,
             morada: house,
