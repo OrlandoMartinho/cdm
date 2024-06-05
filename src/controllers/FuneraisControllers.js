@@ -116,13 +116,13 @@ const funeralController = {
     legalizarFuneral: async (req, res) => {
         try {
             const { accessToken,id_funeral } = req.body;
-            if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=1){
+            if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)!=2){
                 return res.status(401).json({ Mensagem: "Campos incompletos" });
             }
-            const rupe = gerarCodigoDeVerificacao;
+            const rupe = gerarCodigoDeVerificacao();
             const deleteUsuarioQuery = 'UPDATE funerais SET legalizado =1,rupe = ? WHERE id_funeral = ?';
             const deleteResults=await dbPromise.query(deleteUsuarioQuery, [rupe,id_funeral]) 
-            notify.addNotificacao("Novo pedido de legalizacão id_funeral:",id_funeral,0) 
+            notify.addNotificacao("Novo pedido de legalizacão id_funeral:"+id_funeral,0) 
             return  res.status(200).json({ mensagem: 'Pedido feito com sucesso',rupe_gerado:rupe});
         } catch (err) {
            console.error('Erro ao eliminar usuário:', err);
