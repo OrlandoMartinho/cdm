@@ -51,9 +51,9 @@ const funeralController = {
         if(!accessToken){
             return res.status(400).json({mensagem:"Token não fornecido"})
         }
-      
+        console.log(token.usuarioTipo(accessToken))
         if(!await token.verificarTokenUsuario(accessToken)||token.usuarioTipo(accessToken)==2){
-            return res.status(401).json({ Mensagem: "Campos incompletos" });
+            return res.status(401).json({ Mensagem: "Erro  de permissão" });
         }
         const selectQuery2 = "SELECT * FROM funerais";
         const [usersResults] =await dbPromise.query(selectQuery2)       

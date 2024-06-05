@@ -34,7 +34,7 @@ function cadastrarNaApi(dados) {
 
 // Função para eliminar um funcionário
 function eliminarFuncionario(id_usuario) {
-    if (!confirm("Tem certeza que deseja excluir este funcionário?")) {
+    if (!confirm("Tem certeza que deseja excluir este funeral?")) {
         return;
     }
    

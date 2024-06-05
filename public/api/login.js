@@ -28,7 +28,7 @@ fetch(`${base_url}`, requestOptions)
                 window.location.href = "admin.html";
             }else if(data.usuarioTipo==1){
                 //window.location.href = "pages/home.html";
-                alert('tela do funcionario')
+                window.location.href = "funcionario.html"
             }else if(data.usuarioTipo==2){
                 window.location.href = "home.html";
             } 
@@ -83,7 +83,7 @@ document.getElementById('entrar').addEventListener("click", function () {
                 if(data.usuarioTipo==0){
                     window.location.href = "admin.html";
                 }else if(data.usuarioTipo==1){
-                    window.location.href = "pages/funcionario.html";
+                    window.location.href = "funcionario.html";
                 }else if(data.usuarioTipo==2){
                     window.location.href = "home.html";
                 }

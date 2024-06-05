@@ -6,55 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CED_CEM</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/funeraisregistrados.css">
+    <link rel="stylesheet" href="css/funeraisagendados.css">
     <link rel="stylesheet" href="font-icone/css/all.min.css">
+    <script src="api/autenticacaoUser.js"></script>
 </head>
 <body>
     <header>
-        <a href=".html"><img src="../assets/img/logo.png" alt=""></a>
-        <h1>Funcionário Pedro Manuel</h1>
+        <a href="funcionario.html"><img src="../assets/img/logo.png" alt=""></a>
+        <h1>Funcionário </h1>
     </header>
     <div class="container my-5">
-      <h2 class="text-center">Legalização agendada</h2>
+      <h2 class="text-center">Pedido de Legalização de Funerais</h2>
       <div class="row">
         <div class="iconer-voltar">
-          <a href="gestor.html"><i class="fa fa-arrow-left"></i></a>  
+          <a href="funcionario.html"><i class="fa fa-arrow-left"></i></a>  
         </div>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
           <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
       </div>
           <div class="col-md-12">
-              <table class="table table-bordered mt-4">
-                  <thead class="table color_tabela">
-                      <tr>
-                          <th>ID</th>
-                          <th>Nome completo</th>
-                          <th>Gênero</th>
-                          <th>Nome Ent.Q</th>
-                          <th>Filiação</th>
-                          <th>Nacionalidade</th>
-                          <th>Data Nasc/Mort</th>
-                          <th>Data do Sepultao</th>
-                          <th>Localização</th>
-                          <th>Controle</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>1</td>
-                          <td>João Tubias Maria Furtado</td>
-                          <td>M</td>
-                          <td>Orlando Casto Saiombo</td>
-                          <td>Manuel Tubias Sandra Furtado</td>
-                          <td>Nacional</td>
-                          <td>15/07/1999 20/09/2024</td>
-                          <td>26/09/2024</td>
-                          <td>Quadra 14-Lote 123</td>
-                          <td>
-							<a href="funeraisagendados.html" class="btn modal-delete"><i class="	fa fa-check" aria-hidden="true"></i></a>
-							<a href="funeraisregistrados.html" class="btn modal-entrar"><i class="	fa fa-close" aria-hidden="true"></i></a>
-						</td>
+
+            <table class="table table-bordered">
+                <thead class="table color_tabela">
+                  <tr>
+                    <th>Nome Completo</th>
+                    <th>Filiação</th>
+                    <th>Causa da morte</th>
+                    <th>Falecimento</th>
+                    <th>Sepultamento</th>
+                    <th>Localização</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Adicione mais linhas conforme necessário -->
+                </tbody>
+              </table>
+
+              
+							
                       </tr>
                   </tbody>
               </table>
@@ -63,6 +54,7 @@
   </div>
 <script src="font-icone/js/all.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="js/funeraisregistrados.js"></script>
+<script src="js/funeraisagendados.js"></script>
+<script src="api/legalizarFuneral.js"></script>
 </body>
 </html>

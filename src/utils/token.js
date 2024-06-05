@@ -30,7 +30,7 @@ const token = {
     usuarioEmail: (accessToken) => {
         try {
             const decodedToken = jwt.verify(accessToken, secretKey.secretKey)
-            console.log(decodedToken)
+            
             if (decodedToken) {
                 return decodedToken.usuarioEmail;
             } else {
