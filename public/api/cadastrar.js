@@ -1,5 +1,17 @@
 const base_url = 'http://localhost:3000/';
+function isAdult(birthdate) {
+    const birthDate = new Date(birthdate);
+    const today = new Date();
 
+    const yearsDifference = today.getFullYear() - birthDate.getFullYear();
+    const isMonthGreater = today.getMonth() > birthDate.getMonth();
+    const isMonthEqualAndDayGreaterOrEqual = today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate();
+
+    if (yearsDifference > 18 || (yearsDifference === 18 && (isMonthGreater || isMonthEqualAndDayGreaterOrEqual))) {
+        return true;
+    }
+    return false;
+}
 function cadastrarNaApi(dados) {
     const requestOptions = {
         method: 'POST',
@@ -33,6 +45,10 @@ document.getElementById('cadastrar').addEventListener('click', () => {
 
     if (password !== confirmPassword || !name || !password || !genero || !email || !date || !house) {
         alert('Verifique os dados informados');
+    }else if(isAdult(date)){
+
+        alert('Pessoas co menores de 18 anos não podem usar o site');
+
     } else {
         const dadosUser = {
             email: email,
