@@ -39,6 +39,13 @@ function adicionarLinhasTabela() {
                     <td>${dado.mensagem}</td>
                     <td>${formatarData(dado.data_do_contato)}</td>
                 `;
+                // Adiciona evento de clique para cada linha da tabela
+                novaLinha.addEventListener('click', function() {
+                    // Salva o ID do contato no armazenamento local
+                    localStorage.setItem('id_contato', dado.id_contato);
+                    // Redireciona para outra página
+                    window.location.href = 'outra_pagina.html';
+                });
                 tbody.appendChild(novaLinha);
             });
         })
@@ -46,6 +53,7 @@ function adicionarLinhasTabela() {
             console.error('Erro:', error);
         });
 }
+
 
 function eliminarNotificacoes() {
     if (confirm('Tem certeza de que deseja eliminar todas as notificações?')) {

@@ -147,3 +147,15 @@
             font-size: 1.4rem;
             margin-top: 2rem;
         }
+
+        .sidebar-sticky {
+          height: 100vh;
+        }
+
+      tr {
+          cursor: pointer; /* Altera o cursor para uma mãozinha quando passa sobre as linhas */
+      }
+
+      tr:hover {
+          background-color: #f0f0f0; /* Altera o fundo da linha quando o mouse passa sobre ela */
+      }
