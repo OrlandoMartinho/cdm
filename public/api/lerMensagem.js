@@ -10,6 +10,46 @@ function formatarData(data) {
 
 
 
+
+
+document.getElementById('eliminar').addEventListener('click',()=>{
+
+   
+        if (!confirm("Tem certeza que eliminar excluir este funcionário?")) {
+            return;
+        }else{
+       
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                accessToken: localStorage.getItem('token'),
+                id_contato: localStorage.getItem('id_contato')
+            })
+    
+        };
+    
+        fetch(`${base_url}contatos/apagar`, requestOptions)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao eliminar funcionário: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data)
+                alert("Contato excluído com sucesso");
+        
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert("Erro ao eliminar funcionário");
+            });
+        }
+})
+
 document.addEventListener('DOMContentLoaded', () => {
     
     

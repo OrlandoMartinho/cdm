@@ -11,6 +11,6 @@ router.post('/obterPorId', ContactosController.obterContactoPorId);
 
 router.post('/responder_usuario',ContactosController.responderUsuario)
 
-router.delete('/', ContactosController.eliminarContactoPeloId);
+router.post('/apagar', ContactosController.eliminarContactoPeloId);
 
 module.exports = router;
